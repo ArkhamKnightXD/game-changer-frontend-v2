@@ -3,31 +3,38 @@ import TableComponent from "./components/TableComponent";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useEffect, useState} from "react";
 import {getAllVideoGames} from "./services/VideoGameService";
+import FormDialog from "./components/FormDialog";
 
 function App() {
 
     const [videoGames, setVideoGames] = useState([]);
+    const [isOpenDialog, setIsOpenDialog] = useState(false);
+
+    const handleOpenDialog = () =>{
+
+        setIsOpenDialog(true);
+    };
+
+    const handleCloseDialog = () => {
+        setIsOpenDialog(false);
+    };
 
     useEffect(()=>{
 
         getAllVideoGames(setVideoGames);
 
-    }, [])
+    }, []);
+
 
   return (
 
     <div className="App">
 
-      <h1>Inicio</h1>
+        <button className="btn btn-outline-primary" onClick={handleOpenDialog}>Add Video Game</button>
 
-        <button className="btn btn-outline-primary">Inicio</button>
+        <TableComponent tableName="Video Games" videoGames={videoGames} setVideoGames={setVideoGames}/>
 
-        {videoGames.map((videoGame)=>(
-            <h1>{videoGame.name}</h1>
-        ))}
-
-        <TableComponent name="test"/>
-
+        <FormDialog isOpenDialog={isOpenDialog} handleOpen={handleOpenDialog} handleClose={handleCloseDialog()} />
     </div>
   );
 }
