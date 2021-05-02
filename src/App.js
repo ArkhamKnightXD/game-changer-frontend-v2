@@ -30,11 +30,11 @@ function App() {
 
     <div className="App">
 
-        <button className="btn btn-outline-primary" onClick={handleOpenDialog}>Add Video Game</button>
+        <button className="btn btn-primary" onClick={handleOpenDialog}>Add Video Game</button>
 
         <TableComponent tableName="Video Games" videoGames={videoGames} setVideoGames={setVideoGames}/>
 
-        <FormDialog isOpenDialog={isOpenDialog} handleOpen={handleOpenDialog} handleClose={handleCloseDialog()} />
+        {/*<FormDialog isOpenDialog={isOpenDialog} handleOpen={handleOpenDialog} handleClose={handleCloseDialog()} />*/}
     </div>
   );
 }

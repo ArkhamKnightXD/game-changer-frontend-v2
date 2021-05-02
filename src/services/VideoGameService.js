@@ -5,7 +5,7 @@ const URL = "http://localhost:88";
 
 export const getAllVideoGames = (setVideoGames) => {
 
-    axios.get(`${URL}/api/v1/games`).then(response => {
+    axios.get(`${URL}/api/v1/video-games`).then(response => {
 
         setVideoGames(response.data);
     });
@@ -39,7 +39,7 @@ export const updateVideoGame = async (videoGameToUpdate, setVideoGames) => {
 
 export const deleteVideoGameById = async (videoGameId, setVideoGames) => {
 
-    await axios.delete(`${URL}/api/v1/delete/${videoGameId}`);
+    await axios.delete(`${URL}/api/v1/delete-video-game-by/${videoGameId}`);
 
     getAllVideoGames(setVideoGames);
 }

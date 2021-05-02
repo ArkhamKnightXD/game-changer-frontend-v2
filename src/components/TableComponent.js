@@ -31,7 +31,7 @@ function TableComponent(props){
                         <td>{videoGame.developer}</td>
                         <td>{videoGame.genre}</td>
                         <td>{videoGame.gameModes}</td>
-                        <td><button className="btn-outline-primary">Edit</button> <button onClick={() => deleteVideoGame(videoGame.id)} className="btn-outline-danger">Delete</button> </td>
+                        <td><button className="btn-primary">Edit</button> <button onClick={() => deleteVideoGame(videoGame.id)} className="btn-danger">Delete</button> </td>
                     </tr>
                 ))}
 
