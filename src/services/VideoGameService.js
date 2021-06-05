@@ -34,7 +34,7 @@ export const updateVideoGame = async (videoGameToUpdate, setVideoGames) => {
     await axios.put(`${URL}/api/v1/update`, videoGameToUpdate);
 
     getAllVideoGames(setVideoGames);
-}
+};
 
 
 export const deleteVideoGameById = async (videoGameId, setVideoGames) => {
@@ -42,4 +42,4 @@ export const deleteVideoGameById = async (videoGameId, setVideoGames) => {
     await axios.delete(`${URL}/api/v1/delete-video-game-by/${videoGameId}`);
 
     getAllVideoGames(setVideoGames);
-}
+};

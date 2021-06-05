@@ -8,29 +8,61 @@ function FormDialog(props) {
         <div>
 
             <Dialog open={props.isOpenDialog} onClose={props.handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+                <DialogTitle id="form-dialog-title">New Videogame</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>
-                        To subscribe to this website, please enter your email address here. We will send updates
-                        occasionally.
-                    </DialogContentText>
+
                     <TextField
                         autoFocus
                         margin="dense"
                         id="name"
-                        label="Email Address"
-                        type="email"
+                        name="name"
+                        label="Name"
+                        type="text"
                         fullWidth
                     />
+
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        name="developer"
+                        id="developer"
+                        label="Developer"
+                        type="text"
+                        fullWidth
+                    />
+
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        name="genre"
+                        id="genre"
+                        label="Genre"
+                        type="text"
+                        fullWidth
+                    />
+
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        name="gameModes"
+                        id="gameModes"
+                        label="Game Modes"
+                        type="text"
+                        // value={}
+                        fullWidth
+                    />
+
                 </DialogContent>
+
                 <DialogActions>
                     <Button onClick={props.handleClose} color="primary">
                         Cancel
                     </Button>
                     <Button onClick={props.handleClose} color="primary">
-                        Subscribe
+                        Add Videogame
                     </Button>
                 </DialogActions>
+
             </Dialog>
         </div>
     );

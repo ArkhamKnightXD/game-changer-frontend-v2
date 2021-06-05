@@ -34,7 +34,7 @@ function App() {
 
         <TableComponent tableName="Video Games" videoGames={videoGames} setVideoGames={setVideoGames}/>
 
-        {/*<FormDialog isOpenDialog={isOpenDialog} handleOpen={handleOpenDialog} handleClose={handleCloseDialog()} />*/}
+        <FormDialog isOpenDialog={isOpenDialog} handleOpen={handleOpenDialog} handleClose={handleCloseDialog} />
     </div>
   );
 }
