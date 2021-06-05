@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField} from "@material-ui/core";
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
 
 
 function FormDialog(props) {
@@ -48,7 +48,6 @@ function FormDialog(props) {
                         id="gameModes"
                         label="Game Modes"
                         type="text"
-                        // value={}
                         fullWidth
                     />
 
