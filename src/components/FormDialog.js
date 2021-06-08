@@ -1,8 +1,60 @@
-import React from "react";
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
+import React, {useState} from "react";
+import {Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
+import {saveVideoGame} from "../services/VideoGameService";
 
 
 function FormDialog(props) {
+
+    const [name, setName] = useState("");
+    const [developer, setDeveloper] = useState("");
+    const [genre, setGenre] = useState("");
+    const [gameModes, setGameModes] = useState("");
+
+    const handleNameChange = (event) =>{
+
+        setName(event.target.value);
+    };
+
+    const handleDeveloperChange = (event) => {
+
+        setDeveloper(event.target.value);
+    };
+
+    const handleGenreChange = (event) => {
+
+        setGenre(event.target.value);
+    };
+
+    const handleGameModesChange = (event) => {
+
+        setGameModes(event.target.value);
+    };
+
+    const resetFormData = () => {
+
+        setName("");
+        setDeveloper("");
+        setGenre("");
+        setGameModes("");
+    };
+
+    const handleSubmit = async () => {
+
+        const videoGameToSave = {name, developer, genre, gameModes};
+
+        await saveVideoGame(videoGameToSave, props.setVideoGames);
+
+        resetFormData();
+
+        props.handleClose();
+    };
+
+    const handleCancel = () => {
+
+        resetFormData();
+
+        props.handleClose();
+    };
 
     return (
         <div>
@@ -18,6 +70,8 @@ function FormDialog(props) {
                         name="name"
                         label="Name"
                         type="text"
+                        value={name}
+                        onChange={handleNameChange}
                         fullWidth
                     />
 
@@ -28,6 +82,8 @@ function FormDialog(props) {
                         id="developer"
                         label="Developer"
                         type="text"
+                        value={developer}
+                        onChange={handleDeveloperChange}
                         fullWidth
                     />
 
@@ -38,6 +94,8 @@ function FormDialog(props) {
                         id="genre"
                         label="Genre"
                         type="text"
+                        value={genre}
+                        onChange={handleGenreChange}
                         fullWidth
                     />
 
@@ -48,18 +106,20 @@ function FormDialog(props) {
                         id="gameModes"
                         label="Game Modes"
                         type="text"
+                        value={gameModes}
+                        onChange={handleGameModesChange}
                         fullWidth
                     />
 
                 </DialogContent>
 
                 <DialogActions>
-                    <Button onClick={props.handleClose} color="primary">
+                    <button onClick={handleCancel} className="btn-danger">
                         Cancel
-                    </Button>
-                    <Button onClick={props.handleClose} color="primary">
+                    </button>
+                    <button onClick={handleSubmit} type="submit" className="btn-primary">
                         Add Videogame
-                    </Button>
+                    </button>
                 </DialogActions>
 
             </Dialog>

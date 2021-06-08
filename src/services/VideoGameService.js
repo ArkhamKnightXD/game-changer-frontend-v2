@@ -12,9 +12,9 @@ export const getAllVideoGames = (setVideoGames) => {
 };
 
 
-export const saveVideoGame = async (videoGame, setVideoGames) =>{
+export const saveVideoGame = async (videoGame, setVideoGames) => {
 
-    await axios.post(`${URL}/api/v1/save`, videoGame);
+    await axios.post(`${URL}/api/v1/save-video-game`, videoGame);
 
     getAllVideoGames(setVideoGames);
 };
@@ -22,7 +22,7 @@ export const saveVideoGame = async (videoGame, setVideoGames) =>{
 
 export const getActualVideoGame = (videoGameId, setActualVideoGame) =>{
 
-    axios.get(`${URL}/api/v1/get/${videoGameId}`).then(response => {
+    axios.get(`${URL}/api/v1/get-video-game-by/${videoGameId}`).then(response => {
 
         setActualVideoGame(response.data);
     });
@@ -31,7 +31,7 @@ export const getActualVideoGame = (videoGameId, setActualVideoGame) =>{
 
 export const updateVideoGame = async (videoGameToUpdate, setVideoGames) => {
 
-    await axios.put(`${URL}/api/v1/update`, videoGameToUpdate);
+    await axios.put(`${URL}/api/v1/update-video-game`, videoGameToUpdate);
 
     getAllVideoGames(setVideoGames);
 };

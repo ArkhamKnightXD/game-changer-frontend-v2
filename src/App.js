@@ -8,6 +8,7 @@ import FormDialog from "./components/FormDialog";
 function App() {
 
     const [videoGames, setVideoGames] = useState([]);
+    const [actualVideoGame, setActualVideoGame] = useState(null);
     const [isOpenDialog, setIsOpenDialog] = useState(false);
 
     const handleOpenDialog = () =>{
@@ -32,9 +33,9 @@ function App() {
 
         <button className="btn btn-primary" onClick={handleOpenDialog}>Add Video Game</button>
 
-        <TableComponent tableName="Video Games" videoGames={videoGames} setVideoGames={setVideoGames}/>
+        <TableComponent  videoGames={videoGames} setVideoGames={setVideoGames} setActualVideoGame={setActualVideoGame}/>
 
-        <FormDialog isOpenDialog={isOpenDialog} handleOpen={handleOpenDialog} handleClose={handleCloseDialog} />
+        <FormDialog isOpenDialog={isOpenDialog} setVideoGames={setVideoGames} handleOpen={handleOpenDialog} handleClose={handleCloseDialog} actualVideoGame={actualVideoGame} />
     </div>
   );
 }
