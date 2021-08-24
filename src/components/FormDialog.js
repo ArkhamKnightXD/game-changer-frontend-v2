@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
 import {saveVideoGame, updateVideoGame} from "../services/VideoGameService";
+//Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
+import PropTypes from 'prop-types';
 
 function FormDialog(props) {
 
@@ -85,7 +87,7 @@ function FormDialog(props) {
         <div>
 
             <Dialog open={props.isOpenDialog} onClose={props.handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">New Videogame</DialogTitle>
+                <DialogTitle id="form-dialog-title">New VideoGame</DialogTitle>
                 <DialogContent>
 
                     <TextField
@@ -151,5 +153,15 @@ function FormDialog(props) {
         </div>
     );
 }
+
+//De esta form declaro los tipos de datos que tienen los props que recibo, esto no es completamente necesario
+//pero le da claridad al codigo ya que asi se de forma clara lo que llega en cada prop
+FormDialog.propTypes = {
+
+    isOpenDialog: PropTypes.bool,
+    handleClose: PropTypes.func,
+    setVideoGames: PropTypes.array,
+    actualVideoGame: PropTypes.object
+};
 
 export default FormDialog;
