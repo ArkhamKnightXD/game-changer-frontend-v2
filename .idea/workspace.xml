@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TableComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TableComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/VideoGameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VideoGameService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +101,10 @@
       <workItem from="1622645794924" duration="856000" />
       <workItem from="1622905805467" duration="3133000" />
       <workItem from="1623069551204" duration="316000" />
-      <workItem from="1623160790814" duration="5051000" />
+      <workItem from="1623160790814" duration="5643000" />
+      <workItem from="1628113478663" duration="316000" />
+      <workItem from="1628169873130" duration="31000" />
+      <workItem from="1629811939475" duration="6492000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -115,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622908955615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ya se crea y actualice las url de los servicios, lo siguiente sera trabajar con la edicion">
+      <created>1623165931101</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623165931101</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +150,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create" />
     <MESSAGE value="extra changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="extra changes" />
+    <MESSAGE value="Ya se crea y actualice las url de los servicios, lo siguiente sera trabajar con la edicion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya se crea y actualice las url de los servicios, lo siguiente sera trabajar con la edicion" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

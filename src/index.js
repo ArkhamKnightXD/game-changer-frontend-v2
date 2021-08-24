@@ -4,9 +4,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+//recomendacion de quitar los tags de strict mode de aqui para evitar errores con material ui
+    //El strict mode solo afecta el modo developer, pero no es necesario en produccion asi que puedo quitarlo sin problema
+    <App />,
   document.getElementById('root')
 );
 

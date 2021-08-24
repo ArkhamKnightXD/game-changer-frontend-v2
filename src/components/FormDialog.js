@@ -1,14 +1,32 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
-import {saveVideoGame} from "../services/VideoGameService";
-
+import {saveVideoGame, updateVideoGame} from "../services/VideoGameService";
 
 function FormDialog(props) {
 
+    const [id, setId] = useState(0);
     const [name, setName] = useState("");
     const [developer, setDeveloper] = useState("");
     const [genre, setGenre] = useState("");
     const [gameModes, setGameModes] = useState("");
+
+
+    //la forma mas facil de tener el mismo dialog para crear y editar es simplemente pasarle los datos del actualgame
+    //a los estados correspondientes, siempre y cuando el juego actual este presente
+    useEffect(() => {
+
+        //verifico que el videojuego actual este para asi llenar los estados
+        if(props.actualVideoGame){
+
+            setId(props.actualVideoGame.id);
+            setName(props.actualVideoGame.name);
+            setDeveloper(props.actualVideoGame.developer);
+            setGenre(props.actualVideoGame.genre);
+            setGameModes(props.actualVideoGame.gameModes);
+        }
+
+        //el useeffect se ejecutara cada vez el videojuego actual cambie por lo tanto siempre tendre el juego correcto a la hora de editar
+    }, [props.actualVideoGame]);
 
     const handleNameChange = (event) =>{
 
@@ -32,6 +50,7 @@ function FormDialog(props) {
 
     const resetFormData = () => {
 
+        setId("");
         setName("");
         setDeveloper("");
         setGenre("");
@@ -40,9 +59,15 @@ function FormDialog(props) {
 
     const handleSubmit = async () => {
 
-        const videoGameToSave = {name, developer, genre, gameModes};
+        const videoGameToSave = {id, name, developer, genre, gameModes};
 
-        await saveVideoGame(videoGameToSave, props.setVideoGames);
+        //si el id actual esta disponible que actualice el videogame y sino que solo cree uno nuevo
+        if (id)
+            await updateVideoGame(videoGameToSave, props.setVideoGames);
+
+        else
+            await saveVideoGame(videoGameToSave, props.setVideoGames);
+
 
         resetFormData();
 
