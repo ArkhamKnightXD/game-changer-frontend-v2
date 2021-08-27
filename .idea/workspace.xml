@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Ya el proyecto puede editar correctamente, por lo tanto el crud inicial esta terminado&#10;Lo que sigue sera darle algo de estetica a la tabla">
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/VideoGameTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Table.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -100,7 +109,9 @@
       <workItem from="1623160790814" duration="5643000" />
       <workItem from="1628113478663" duration="316000" />
       <workItem from="1628169873130" duration="31000" />
-      <workItem from="1629811939475" duration="8809000" />
+      <workItem from="1629811939475" duration="9165000" />
+      <workItem from="1629900869643" duration="255000" />
+      <workItem from="1630090250625" duration="3968000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -130,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629820234717</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Agregando los proptypes a mi componente de form dialog, para indicar el tipo de dato de cada prop">
+      <created>1629826028778</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1629826028778</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +173,8 @@
     <MESSAGE value="extra changes" />
     <MESSAGE value="Ya se crea y actualice las url de los servicios, lo siguiente sera trabajar con la edicion" />
     <MESSAGE value="Ya el proyecto puede editar correctamente, por lo tanto el crud inicial esta terminado&#10;Lo que sigue sera darle algo de estetica a la tabla" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya el proyecto puede editar correctamente, por lo tanto el crud inicial esta terminado&#10;Lo que sigue sera darle algo de estetica a la tabla" />
+    <MESSAGE value="Agregando los proptypes a mi componente de form dialog, para indicar el tipo de dato de cada prop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregando los proptypes a mi componente de form dialog, para indicar el tipo de dato de cada prop" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,6 +3,7 @@ import {Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@mat
 import {saveVideoGame, updateVideoGame} from "../services/VideoGameService";
 //Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
 import PropTypes from 'prop-types';
+import Button from "@material-ui/core/Button";
 
 function FormDialog(props) {
 
@@ -141,12 +142,13 @@ function FormDialog(props) {
                 </DialogContent>
 
                 <DialogActions>
-                    <button onClick={handleCancel} className="btn-danger">
+                    <Button variant="contained" color="primary" onClick={handleSubmit}>
+                        Add Video Game
+                    </Button>
+
+                    <Button variant="contained" color="secondary" onClick={handleCancel}>
                         Cancel
-                    </button>
-                    <button onClick={handleSubmit} type="submit" className="btn-primary">
-                        Add Videogame
-                    </button>
+                    </Button>
                 </DialogActions>
 
             </Dialog>

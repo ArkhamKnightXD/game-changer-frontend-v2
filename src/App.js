@@ -1,7 +1,7 @@
 import './App.css';
-import Table from "./components/Table";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
+import VideoGameTable from "./components/VideoGameTable";
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
 
     <div className="App">
 
-        <Table />
+        <VideoGameTable />
 
     </div>
   );
