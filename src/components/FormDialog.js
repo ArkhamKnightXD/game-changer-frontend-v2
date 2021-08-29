@@ -162,7 +162,7 @@ FormDialog.propTypes = {
 
     isOpenDialog: PropTypes.bool,
     handleClose: PropTypes.func,
-    setVideoGames: PropTypes.array,
+    setVideoGames: PropTypes.func,
     actualVideoGame: PropTypes.object
 };
 
