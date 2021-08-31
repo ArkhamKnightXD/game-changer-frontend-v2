@@ -52,7 +52,7 @@ export default function VideoGameTable() {
     }, []);
 
 
-    const handleOpenDialog = () =>{
+    const handleOpenDialog = () => {
 
         setIsOpenDialog(true);
     };

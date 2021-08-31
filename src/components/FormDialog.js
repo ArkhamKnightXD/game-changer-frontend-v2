@@ -5,7 +5,7 @@ import {saveVideoGame, updateVideoGame} from "../services/VideoGameService";
 import PropTypes from 'prop-types';
 import Button from "@material-ui/core/Button";
 
-function FormDialog(props) {
+export default function FormDialog(props) {
 
     const [id, setId] = useState(0);
     const [name, setName] = useState("");
@@ -70,7 +70,6 @@ function FormDialog(props) {
 
         else
             await saveVideoGame(videoGameToSave, props.setVideoGames);
-
 
         resetFormData();
 
@@ -165,5 +164,3 @@ FormDialog.propTypes = {
     setVideoGames: PropTypes.func,
     actualVideoGame: PropTypes.object
 };
-
-export default FormDialog;

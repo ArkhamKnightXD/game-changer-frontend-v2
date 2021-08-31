@@ -20,7 +20,7 @@ export const saveVideoGame = async (videoGame, setVideoGames) => {
 };
 
 
-export const getActualVideoGame = (videoGameId, setActualVideoGame) =>{
+export const getActualVideoGame = (videoGameId, setActualVideoGame) => {
 
     axios.get(`${URL}/api/v1/video-games/${videoGameId}`).then(response => {
 

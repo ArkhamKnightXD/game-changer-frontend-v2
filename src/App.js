@@ -2,20 +2,18 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import VideoGameTable from "./components/VideoGameTable";
-import MenuAppBar from "./components/MenuAppBar";
+import NavigationBar from "./components/NavigationBar";
 
-function App() {
+export default function App() {
 
   return (
 
     <div className="App">
 
-        <MenuAppBar/>
+        <NavigationBar/>
 
         <VideoGameTable />
 
     </div>
   );
 }
-
-export default App;
