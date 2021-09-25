@@ -1,37 +1,37 @@
 import axios from "axios";
 
-const URL = "http://localhost:88";
+const URL = "http://localhost:88/api/v1";
 
 
 export const getAllVideoGames = (setVideoGames) => {
 
-    axios.get(`${URL}/api/v1/video-games`).then(response => {
+    axios.get(`${URL}/video-games`).then(response => {
 
         setVideoGames(response.data);
     });
 };
 
 
-export const saveVideoGame = async (videoGame, setVideoGames) => {
+export const getVideoGameById = (videoGameId, setActualVideoGame) => {
 
-    await axios.post(`${URL}/api/v1/video-games`, videoGame);
-
-    getAllVideoGames(setVideoGames);
-};
-
-
-export const getActualVideoGame = (videoGameId, setActualVideoGame) => {
-
-    axios.get(`${URL}/api/v1/video-games/${videoGameId}`).then(response => {
+    axios.get(`${URL}/video-games/${videoGameId}`).then(response => {
 
         setActualVideoGame(response.data);
     });
 };
 
 
+export const saveVideoGame = async (videoGame, setVideoGames) => {
+
+    await axios.post(`${URL}/video-games`, videoGame);
+
+    getAllVideoGames(setVideoGames);
+};
+
+
 export const updateVideoGame = async (videoGameToUpdate, setVideoGames) => {
 
-    await axios.put(`${URL}/api/v1/video-games`, videoGameToUpdate);
+    await axios.put(`${URL}/video-games`, videoGameToUpdate);
 
     getAllVideoGames(setVideoGames);
 };
@@ -39,7 +39,7 @@ export const updateVideoGame = async (videoGameToUpdate, setVideoGames) => {
 
 export const deleteVideoGameById = async (videoGameId, setVideoGames) => {
 
-    await axios.delete(`${URL}/api/v1/video-games/${videoGameId}`);
+    await axios.delete(`${URL}/video-games/${videoGameId}`);
 
     getAllVideoGames(setVideoGames);
 };

@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {deleteVideoGameById, getActualVideoGame, getAllVideoGames} from "../services/VideoGameService";
+import {deleteVideoGameById, getVideoGameById, getAllVideoGames} from "../services/VideoGameService";
 import FormDialog from "./FormDialog";
 import Button from "@material-ui/core/Button";
 
@@ -70,9 +70,9 @@ export default function VideoGameTable() {
     };
 
 
-    const getVideoGameById = (videoGameId) => {
+    const getSelectedVideoGameData = (videoGameId) => {
 
-        getActualVideoGame(videoGameId, setActualVideoGame);
+        getVideoGameById(videoGameId, setActualVideoGame);
 
         handleOpenDialog();
     };
@@ -107,7 +107,7 @@ export default function VideoGameTable() {
                             <StyledTableCell align="left">{videoGame.genre}</StyledTableCell>
                             <StyledTableCell align="left">{videoGame.gameModes}</StyledTableCell>
                             <StyledTableCell align="left">
-                                <Button variant="contained" color="primary" onClick={() => getVideoGameById(videoGame.id)}>Edit</Button>
+                                <Button variant="contained" color="primary" onClick={() => getSelectedVideoGameData(videoGame.id)}>Edit</Button>
                                 <Button variant="contained" color="secondary" onClick={() => deleteVideoGame(videoGame.id)}>Delete</Button>
                             </StyledTableCell>
                         </StyledTableRow>

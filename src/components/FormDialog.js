@@ -51,15 +51,6 @@ export default function FormDialog(props) {
         setGameModes(event.target.value);
     };
 
-    const resetFormData = () => {
-
-        setId("");
-        setName("");
-        setDeveloper("");
-        setGenre("");
-        setGameModes("");
-    };
-
     const handleSubmit = async () => {
 
         const videoGameToSave = {id, name, developer, genre, gameModes};
@@ -74,6 +65,16 @@ export default function FormDialog(props) {
         resetFormData();
 
         props.handleClose();
+    };
+
+
+    const resetFormData = () => {
+
+        setId("");
+        setName("");
+        setDeveloper("");
+        setGenre("");
+        setGameModes("");
     };
 
     const handleCancel = () => {
