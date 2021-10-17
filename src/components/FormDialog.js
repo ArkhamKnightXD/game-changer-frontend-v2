@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 
 export default function FormDialog(props) {
 
+
     const [id, setId] = useState(0);
     const [name, setName] = useState("");
     const [developer, setDeveloper] = useState("");
@@ -70,7 +71,7 @@ export default function FormDialog(props) {
 
     const resetFormData = () => {
 
-        setId("");
+        setId(0);
         setName("");
         setDeveloper("");
         setGenre("");
