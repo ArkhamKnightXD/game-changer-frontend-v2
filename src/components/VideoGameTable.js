@@ -64,9 +64,9 @@ export default function VideoGameTable() {
     };
 
 
-    const deleteVideoGame = async (videoGameId) =>{
+    const deleteVideoGame = (videoGameId) =>{
 
-        await deleteVideoGameById(videoGameId, setVideoGames);
+        deleteVideoGameById(videoGameId, setVideoGames);
     };
 
 

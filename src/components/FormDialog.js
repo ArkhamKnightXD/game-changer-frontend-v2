@@ -13,7 +13,6 @@ export default function FormDialog(props) {
     const [genre, setGenre] = useState("");
     const [gameModes, setGameModes] = useState("");
 
-
     //la forma mas facil de tener el mismo dialog para crear y editar es simplemente pasarle los datos del actualgame
     //a los estados correspondientes, siempre y cuando el juego actual este presente
     useEffect(() => {
@@ -28,8 +27,9 @@ export default function FormDialog(props) {
             setGameModes(props.actualVideoGame.gameModes);
         }
 
-        //el useeffect se ejecutara cada vez el videojuego actual cambie por lo tanto siempre tendre el juego correcto a la hora de editar
+        //el useEffect se ejecutara cada vez el videojuego actual cambie por lo tanto siempre tendre el juego correcto a la hora de editar
     }, [props.actualVideoGame]);
+
 
     const handleNameChange = (event) =>{
 
@@ -41,30 +41,31 @@ export default function FormDialog(props) {
         setDeveloper(event.target.value);
     };
 
+
     const handleGenreChange = (event) => {
 
         setGenre(event.target.value);
     };
+
 
     const handleGameModesChange = (event) => {
 
         setGameModes(event.target.value);
     };
 
-    const handleSubmit = async () => {
+
+    const handleSubmit = () => {
 
         const videoGameToSave = {id, name, developer, genre, gameModes};
 
         //si el id actual esta disponible que actualice el videogame y sino que solo cree uno nuevo
         if (id)
-            await updateVideoGame(videoGameToSave, props.setVideoGames);
+            updateVideoGame(videoGameToSave, props.setVideoGames);
 
         else
-            await saveVideoGame(videoGameToSave, props.setVideoGames);
+            saveVideoGame(videoGameToSave, props.setVideoGames);
 
         resetFormData();
-
-        props.handleClose();
     };
 
 
@@ -75,13 +76,13 @@ export default function FormDialog(props) {
         setDeveloper("");
         setGenre("");
         setGameModes("");
+
+        props.handleClose();
     };
 
     const handleCancel = () => {
 
         resetFormData();
-
-        props.handleClose();
     };
 
     return (

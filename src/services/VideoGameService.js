@@ -21,25 +21,28 @@ export const getVideoGameById = (videoGameId, setActualVideoGame) => {
 };
 
 
-export const saveVideoGame = async (videoGame, setVideoGames) => {
+export const saveVideoGame = (videoGame, setVideoGames) => {
 
-    await axios.post(`${URL}/video-games`, videoGame);
+    axios.post(`${URL}/video-games`, videoGame).then(response => {
 
-    getAllVideoGames(setVideoGames);
+        setVideoGames(response.data);
+    });
 };
 
 
-export const updateVideoGame = async (videoGameToUpdate, setVideoGames) => {
+export const updateVideoGame = (videoGameToUpdate, setVideoGames) => {
 
-    await axios.put(`${URL}/video-games`, videoGameToUpdate);
+    axios.put(`${URL}/video-games`, videoGameToUpdate).then(response => {
 
-    getAllVideoGames(setVideoGames);
+        setVideoGames(response.data);
+    });
 };
 
 
-export const deleteVideoGameById = async (videoGameId, setVideoGames) => {
+export const deleteVideoGameById = (videoGameId, setVideoGames) => {
 
-    await axios.delete(`${URL}/video-games/${videoGameId}`);
+    axios.delete(`${URL}/video-games/${videoGameId}`).then(response => {
 
-    getAllVideoGames(setVideoGames);
+        setVideoGames(response.data);
+    });
 };

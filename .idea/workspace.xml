@@ -138,7 +138,11 @@
       <workItem from="1631203136670" duration="137000" />
       <workItem from="1631212211338" duration="10000" />
       <workItem from="1631821273250" duration="883000" />
-      <workItem from="1632580921793" duration="2815000" />
+      <workItem from="1632580921793" duration="2925000" />
+      <workItem from="1632764465829" duration="1349000" />
+      <workItem from="1633379619513" duration="1679000" />
+      <workItem from="1633633227583" duration="337000" />
+      <workItem from="1634927119048" duration="3114000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -182,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630767819879</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactorizacion de varias funciones y cambios en la url del VideoGameServices">
+      <created>1632584106960</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632584106960</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +220,8 @@
     <MESSAGE value="Ya el proyecto puede editar correctamente, por lo tanto el crud inicial esta terminado&#10;Lo que sigue sera darle algo de estetica a la tabla" />
     <MESSAGE value="Agregando los proptypes a mi componente de form dialog, para indicar el tipo de dato de cada prop" />
     <MESSAGE value="Actualizacion y limpieza de codigo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion y limpieza de codigo" />
+    <MESSAGE value="Refactorizacion de varias funciones y cambios en la url del VideoGameServices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactorizacion de varias funciones y cambios en la url del VideoGameServices" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
