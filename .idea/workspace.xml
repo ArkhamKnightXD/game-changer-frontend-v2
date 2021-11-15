@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="extra changes">
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/VideoGameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VideoGameService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoGameTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +132,7 @@
       <workItem from="1635714735725" duration="44000" />
       <workItem from="1636915896603" duration="146000" />
       <workItem from="1636916156363" duration="218000" />
+      <workItem from="1636999747526" duration="710000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>

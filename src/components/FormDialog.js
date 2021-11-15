@@ -14,22 +14,25 @@ export default function FormDialog(props) {
     const [genre, setGenre] = useState("");
     const [gameModes, setGameModes] = useState("");
 
+    //obtengo todos los elementos que utilizare de mi props mediante Destructuring
+    const {actualVideoGame, handleClose, isOpenDialog, setVideoGames} = props;
+
     //la forma mas facil de tener el mismo dialog para crear y editar es simplemente pasarle los datos del actualgame
     //a los estados correspondientes, siempre y cuando el juego actual este presente
     useEffect(() => {
 
         //verifico que el videojuego actual este para asi llenar los estados
-        if(props.actualVideoGame){
+        if(actualVideoGame){
 
-            setId(props.actualVideoGame.id);
-            setName(props.actualVideoGame.name);
-            setDeveloper(props.actualVideoGame.developer);
-            setGenre(props.actualVideoGame.genre);
-            setGameModes(props.actualVideoGame.gameModes);
+            setId(actualVideoGame.id);
+            setName(actualVideoGame.name);
+            setDeveloper(actualVideoGame.developer);
+            setGenre(actualVideoGame.genre);
+            setGameModes(actualVideoGame.gameModes);
         }
 
         //el useEffect se ejecutara cada vez el videojuego actual cambie por lo tanto siempre tendre el juego correcto a la hora de editar
-    }, [props.actualVideoGame]);
+    }, [actualVideoGame]);
 
 
     const handleNameChange = (event) =>{
@@ -61,10 +64,10 @@ export default function FormDialog(props) {
 
         //si el id actual esta disponible que actualice el videogame y sino que solo cree uno nuevo
         if (id)
-            updateVideoGame(videoGameToSave, props.setVideoGames);
+            updateVideoGame(videoGameToSave, setVideoGames);
 
         else
-            saveVideoGame(videoGameToSave, props.setVideoGames);
+            saveVideoGame(videoGameToSave, setVideoGames);
 
         resetFormData();
     };
@@ -78,7 +81,7 @@ export default function FormDialog(props) {
         setGenre("");
         setGameModes("");
 
-        props.handleClose();
+        handleClose();
     };
 
     const handleCancel = () => {
@@ -89,7 +92,7 @@ export default function FormDialog(props) {
     return (
         <div>
 
-            <Dialog open={props.isOpenDialog} onClose={props.handleClose} aria-labelledby="form-dialog-title">
+            <Dialog open={isOpenDialog} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">New VideoGame</DialogTitle>
                 <DialogContent>
 
