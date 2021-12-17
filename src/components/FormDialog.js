@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-import {Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
+import {Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
 import {saveVideoGame, updateVideoGame} from "../services/VideoGameService";
 //Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
 import PropTypes from 'prop-types';
 import Button from "@material-ui/core/Button";
+import GeneralTextField from "./GeneralTextField";
 
 export default function FormDialog(props) {
-
 
     const [id, setId] = useState(0);
     const [name, setName] = useState("");
@@ -34,27 +34,10 @@ export default function FormDialog(props) {
         //el useEffect se ejecutara cada vez el videojuego actual cambie por lo tanto siempre tendre el juego correcto a la hora de editar
     }, [actualVideoGame]);
 
+    //creada funcion general para el manejo de cambio de datos en los formularios
+    const generalHandleChange = (setData, event) => {
 
-    const handleNameChange = (event) =>{
-
-        setName(event.target.value);
-    };
-
-    const handleDeveloperChange = (event) => {
-
-        setDeveloper(event.target.value);
-    };
-
-
-    const handleGenreChange = (event) => {
-
-        setGenre(event.target.value);
-    };
-
-
-    const handleGameModesChange = (event) => {
-
-        setGameModes(event.target.value);
+        setData(event.target.value);
     };
 
 
@@ -96,53 +79,10 @@ export default function FormDialog(props) {
                 <DialogTitle id="form-dialog-title">New VideoGame</DialogTitle>
                 <DialogContent>
 
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="name"
-                        name="name"
-                        label="Name"
-                        type="text"
-                        value={name}
-                        onChange={handleNameChange}
-                        fullWidth
-                    />
-
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        name="developer"
-                        id="developer"
-                        label="Developer"
-                        type="text"
-                        value={developer}
-                        onChange={handleDeveloperChange}
-                        fullWidth
-                    />
-
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        name="genre"
-                        id="genre"
-                        label="Genre"
-                        type="text"
-                        value={genre}
-                        onChange={handleGenreChange}
-                        fullWidth
-                    />
-
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        name="gameModes"
-                        id="gameModes"
-                        label="Game Modes"
-                        type="text"
-                        value={gameModes}
-                        onChange={handleGameModesChange}
-                        fullWidth
-                    />
+                    <GeneralTextField value={name} handleChange={generalHandleChange} label={"Name"} type={"text"} setData={setName}/>
+                    <GeneralTextField value={developer} handleChange={generalHandleChange} label={"Developer"} type={"text"} setData={setDeveloper}/>
+                    <GeneralTextField value={genre} handleChange={generalHandleChange} label={"Genre"} type={"text"} setData={setGenre}/>
+                    <GeneralTextField value={gameModes} handleChange={generalHandleChange} label={"Game Modes"} type={"text"} setData={setGameModes}/>
 
                 </DialogContent>
 
