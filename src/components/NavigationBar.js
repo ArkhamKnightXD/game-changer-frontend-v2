@@ -4,10 +4,9 @@ export default function NavigationBar() {
 
     return (
 
-        //Desabilitare los links ya que me lanzan warning en la consola, por no tener links correctos
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className="navbar-brand" href="#">Game Changer</a>
+
+            <a className="navbar-brand" href="/">Game Changer</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"/>
@@ -15,18 +14,18 @@ export default function NavigationBar() {
 
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+
                     <li className="nav-item active">
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="/">VideoGames <span className="sr-only">(current)</span></a>
                     </li>
+
                     <li className="nav-item">
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a className="nav-link" href="#">VideoGames</a>
+                        <a className="nav-link" href="/about/karvin">About</a>
                     </li>
-                    <li className="nav-item">
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a className="nav-link disabled" href="#">Disabled</a>
-                    </li>
+
+                    {/*<li className="nav-item">*/}
+                    {/*    <a className="nav-link disabled" href="#">Disabled</a>*/}
+                    {/*</li>*/}
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Search"/>
