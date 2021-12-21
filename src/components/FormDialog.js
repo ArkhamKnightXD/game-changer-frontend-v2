@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
+import {Dialog, DialogActions, DialogContent, DialogTitle,} from "@material-ui/core";
 import {saveVideoGame, updateVideoGame} from "../services/VideoGameService";
 //Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
 import PropTypes from 'prop-types';
 import Button from "@material-ui/core/Button";
 import GeneralTextField from "./GeneralTextField";
+import GeneralSelect from "./GeneralSelect";
 
 export default function FormDialog(props) {
 
@@ -16,6 +17,9 @@ export default function FormDialog(props) {
 
     //obtengo todos los elementos que utilizare de mi props mediante Destructuring
     const {actualVideoGame, handleClose, isOpenDialog, setVideoGames} = props;
+
+    const genreList = ["J-RPG", "RPG", "Action"];
+    const gameModesList = ["Multi", "Single"];
 
     //la forma mas facil de tener el mismo dialog para crear y editar es simplemente pasarle los datos del actualgame
     //a los estados correspondientes, siempre y cuando el juego actual este presente
@@ -76,13 +80,19 @@ export default function FormDialog(props) {
         <div>
 
             <Dialog open={isOpenDialog} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">New VideoGame</DialogTitle>
+                <DialogTitle id="form-dialog-title">New Video Game</DialogTitle>
                 <DialogContent>
 
                     <GeneralTextField value={name} handleChange={generalHandleChange} label={"Name"} type={"text"} setData={setName}/>
                     <GeneralTextField value={developer} handleChange={generalHandleChange} label={"Developer"} type={"text"} setData={setDeveloper}/>
-                    <GeneralTextField value={genre} handleChange={generalHandleChange} label={"Genre"} type={"text"} setData={setGenre}/>
-                    <GeneralTextField value={gameModes} handleChange={generalHandleChange} label={"Game Modes"} type={"text"} setData={setGameModes}/>
+
+                    <GeneralSelect value={genre} handleChange={generalHandleChange} label={"Genre"}
+                                   setData={setGenre} dataList={genreList}/>
+
+                    <GeneralSelect value={gameModes} handleChange={generalHandleChange} label={"Game Modes"}
+                                   setData={setGameModes} dataList={gameModesList}/>
+
+
 
                 </DialogContent>
 
@@ -105,8 +115,8 @@ export default function FormDialog(props) {
 //pero le da claridad al codigo ya que asi se de forma clara lo que llega en cada prop
 FormDialog.propTypes = {
 
-    isOpenDialog: PropTypes.bool,
-    handleClose: PropTypes.func,
-    setVideoGames: PropTypes.func,
+    isOpenDialog: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    setVideoGames: PropTypes.func.isRequired,
     actualVideoGame: PropTypes.object
 };

@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Refactorizacion de varias funciones y cambios en la url del VideoGameServices">
-      <change afterPath="$PROJECT_DIR$/src/apps/AboutApp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apps/ErrorApp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apps/VideoGameApp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AboutPage.js" afterDir="false" />
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Modularizando mi componente de form">
+      <change afterPath="$PROJECT_DIR$/src/components/GeneralSelect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoGameTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +134,9 @@
       <workItem from="1636915896603" duration="146000" />
       <workItem from="1636916156363" duration="218000" />
       <workItem from="1636999747526" duration="710000" />
+      <workItem from="1640034054963" duration="600000" />
+      <workItem from="1640089582172" duration="34000" />
+      <workItem from="1640117378112" duration="3126000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>

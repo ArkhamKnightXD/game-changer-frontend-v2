@@ -116,8 +116,8 @@ export default function VideoGameTable() {
             </Table>
 
             {/*Recomendacion de tener el dialog en el componente que mas lo utilizara y no en el app, tambien los estados*/}
-            <FormDialog isOpenDialog={isOpenDialog} setVideoGames={setVideoGames} handleClose={handleCloseDialog}
-                        actualVideoGame={actualVideoGame} />
+            <FormDialog isOpenDialog={isOpenDialog} setVideoGames={setVideoGames}
+                        handleClose={handleCloseDialog} actualVideoGame={actualVideoGame} />
 
         </TableContainer>
     );
