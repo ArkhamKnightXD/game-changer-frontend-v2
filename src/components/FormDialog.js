@@ -9,15 +9,15 @@ import GeneralSelect from "./GeneralSelect";
 
 export default function FormDialog(props) {
 
+    //obtengo todos los elementos que utilizare de mi props mediante Destructuring
     const {actualVideoGame, handleClose, isDialogOpen, setVideoGames} = props;
 
+    //En mi componente lo ideal es solo definir estados y variables que seran utilizados solos en este mismo, hay excepciones claro
     const [id, setId] = useState(0);
     const [name, setName] = useState("");
     const [developer, setDeveloper] = useState("");
     const [genre, setGenre] = useState("");
     const [gameModes, setGameModes] = useState("");
-
-    //obtengo todos los elementos que utilizare de mi props mediante Destructuring
 
     const genreList = ["J-RPG", "RPG", "Action"];
     const gameModesList = ["Multi", "Single"];

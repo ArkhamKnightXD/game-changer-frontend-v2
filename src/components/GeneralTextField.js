@@ -16,7 +16,7 @@ const GeneralTextField = (props) => {
             label={label}
             type={type}
             value={value}
-            onChange={event => {handleChange(setData, event)} }
+            onChange={event => handleChange(setData, event)}
             fullWidth
         />
     );

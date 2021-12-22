@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,8 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {deleteVideoGameById, getVideoGameById} from "../services/VideoGameService";
-import FormDialog from "./FormDialog";
+import {deleteVideoGameById} from "../services/VideoGameService";
 import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
 
@@ -39,23 +38,8 @@ const useStyles = makeStyles({
 
 export default function VideoGameTable(props) {
 
-    const {videoGames, setVideoGames} = props;
+    const {videoGames, setVideoGames, getActualVideoGame} = props;
     const classes = useStyles();
-
-    const [actualVideoGame, setActualVideoGame] = useState(null);
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-
-    const handleOpenDialog = () => {
-
-        setIsDialogOpen(true);
-    };
-
-
-    const handleCloseDialog = () => {
-
-        setIsDialogOpen(false);
-    };
 
 
     const deleteVideoGame = (videoGameId) =>{
@@ -64,21 +48,9 @@ export default function VideoGameTable(props) {
     };
 
 
-    const getSelectedVideoGameData = (videoGameId) => {
-
-        getVideoGameById(videoGameId, setActualVideoGame);
-
-        handleOpenDialog();
-    };
-
-
     return (
 
         <TableContainer component={Paper}>
-
-            <Button variant="contained" color="primary" onClick={handleOpenDialog}>
-                Add Video Game
-            </Button>
 
             <h1>Video Games</h1>
 
@@ -105,18 +77,17 @@ export default function VideoGameTable(props) {
 
                             <StyledTableCell align="left">
 
-                                <Button variant="contained" color="primary" onClick={() => getSelectedVideoGameData(videoGame.id)}>Edit</Button>
-                                <Button variant="contained" color="secondary" onClick={() => deleteVideoGame(videoGame.id)}>Delete</Button>
+                                <Button variant="contained" color="primary"
+                                        onClick={() => getActualVideoGame(videoGame.id)}>Edit</Button>
+
+                                <Button variant="contained" color="secondary"
+                                        onClick={() => deleteVideoGame(videoGame.id)}>Delete</Button>
 
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}
                 </TableBody>
             </Table>
-
-            {/*Recomendacion de tener el dialog en el componente que mas lo utilizara y no en el app, tambien los estados*/}
-            <FormDialog isDialogOpen={isDialogOpen} setVideoGames={setVideoGames}
-                        handleClose={handleCloseDialog} actualVideoGame={actualVideoGame} />
 
         </TableContainer>
     );
@@ -126,4 +97,5 @@ VideoGameTable.propTypes = {
 
     setVideoGames: PropTypes.func.isRequired,
     videoGames: PropTypes.array.isRequired,
+    getActualVideoGame: PropTypes.func.isRequired,
 };
