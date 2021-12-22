@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,9 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {deleteVideoGameById, getVideoGameById, getAllVideoGames} from "../services/VideoGameService";
+import {deleteVideoGameById, getVideoGameById} from "../services/VideoGameService";
 import FormDialog from "./FormDialog";
 import Button from "@material-ui/core/Button";
+import PropTypes from "prop-types";
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -36,31 +37,24 @@ const useStyles = makeStyles({
     },
 });
 
-export default function VideoGameTable() {
+export default function VideoGameTable(props) {
 
+    const {videoGames, setVideoGames} = props;
     const classes = useStyles();
 
-    const [videoGames, setVideoGames] = useState([]);
     const [actualVideoGame, setActualVideoGame] = useState(null);
-    const [isOpenDialog, setIsOpenDialog] = useState(false);
-
-
-    useEffect(()=> {
-
-        getAllVideoGames(setVideoGames);
-
-    }, []);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 
     const handleOpenDialog = () => {
 
-        setIsOpenDialog(true);
+        setIsDialogOpen(true);
     };
 
 
     const handleCloseDialog = () => {
 
-        setIsOpenDialog(false);
+        setIsDialogOpen(false);
     };
 
 
@@ -76,6 +70,7 @@ export default function VideoGameTable() {
 
         handleOpenDialog();
     };
+
 
     return (
 
@@ -98,17 +93,21 @@ export default function VideoGameTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
+
                     {videoGames.map((videoGame) => (
-                        <StyledTableRow key={videoGame.id}>
+                        <StyledTableRow key={videoGame.id} >
                             <StyledTableCell component="th" scope="row">
                                 {videoGame.name}
                             </StyledTableCell>
                             <StyledTableCell align="left">{videoGame.developer}</StyledTableCell>
                             <StyledTableCell align="left">{videoGame.genre}</StyledTableCell>
                             <StyledTableCell align="left">{videoGame.gameModes}</StyledTableCell>
+
                             <StyledTableCell align="left">
+
                                 <Button variant="contained" color="primary" onClick={() => getSelectedVideoGameData(videoGame.id)}>Edit</Button>
                                 <Button variant="contained" color="secondary" onClick={() => deleteVideoGame(videoGame.id)}>Delete</Button>
+
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}
@@ -116,9 +115,15 @@ export default function VideoGameTable() {
             </Table>
 
             {/*Recomendacion de tener el dialog en el componente que mas lo utilizara y no en el app, tambien los estados*/}
-            <FormDialog isOpenDialog={isOpenDialog} setVideoGames={setVideoGames}
+            <FormDialog isDialogOpen={isDialogOpen} setVideoGames={setVideoGames}
                         handleClose={handleCloseDialog} actualVideoGame={actualVideoGame} />
 
         </TableContainer>
     );
 }
+
+VideoGameTable.propTypes = {
+
+    setVideoGames: PropTypes.func.isRequired,
+    videoGames: PropTypes.array.isRequired,
+};

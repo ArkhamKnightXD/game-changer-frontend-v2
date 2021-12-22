@@ -9,6 +9,8 @@ import GeneralSelect from "./GeneralSelect";
 
 export default function FormDialog(props) {
 
+    const {actualVideoGame, handleClose, isDialogOpen, setVideoGames} = props;
+
     const [id, setId] = useState(0);
     const [name, setName] = useState("");
     const [developer, setDeveloper] = useState("");
@@ -16,7 +18,6 @@ export default function FormDialog(props) {
     const [gameModes, setGameModes] = useState("");
 
     //obtengo todos los elementos que utilizare de mi props mediante Destructuring
-    const {actualVideoGame, handleClose, isOpenDialog, setVideoGames} = props;
 
     const genreList = ["J-RPG", "RPG", "Action"];
     const gameModesList = ["Multi", "Single"];
@@ -76,11 +77,20 @@ export default function FormDialog(props) {
         resetFormData();
     };
 
+
     return (
         <div>
 
-            <Dialog open={isOpenDialog} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">New Video Game</DialogTitle>
+            <Dialog open={isDialogOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
+
+                {id === 0 ? (
+
+                        <DialogTitle id="form-dialog-title">New Video Game</DialogTitle>
+                    ):
+
+                    <DialogTitle id="form-dialog-title">{name}</DialogTitle>
+                }
+
                 <DialogContent>
 
                     <GeneralTextField value={name} handleChange={generalHandleChange} label={"Name"} type={"text"} setData={setName}/>
@@ -92,14 +102,20 @@ export default function FormDialog(props) {
                     <GeneralSelect value={gameModes} handleChange={generalHandleChange} label={"Game Modes"}
                                    setData={setGameModes} dataList={gameModesList}/>
 
-
-
                 </DialogContent>
 
                 <DialogActions>
-                    <Button variant="contained" color="primary" onClick={handleSubmit}>
-                        Add Video Game
-                    </Button>
+
+                    {id === 0 ? (
+                        <Button variant="contained" color="primary" onClick={handleSubmit}>
+                            Add Video Game
+                        </Button>
+                    ):
+
+                        <Button variant="contained" color="primary" onClick={handleSubmit}>
+                            Update Video Game
+                        </Button>
+                    }
 
                     <Button variant="contained" color="secondary" onClick={handleCancel}>
                         Cancel
@@ -115,7 +131,7 @@ export default function FormDialog(props) {
 //pero le da claridad al codigo ya que asi se de forma clara lo que llega en cada prop
 FormDialog.propTypes = {
 
-    isOpenDialog: PropTypes.bool.isRequired,
+    isDialogOpen: PropTypes.bool.isRequired,
     handleClose: PropTypes.func.isRequired,
     setVideoGames: PropTypes.func.isRequired,
     actualVideoGame: PropTypes.object

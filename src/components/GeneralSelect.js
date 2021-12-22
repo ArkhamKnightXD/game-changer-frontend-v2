@@ -21,21 +21,20 @@ const GeneralSelect = (props) => {
                     label={label}
                     onChange={event => handleChange(setData, event)}
                 >
-                    {dataList.map((data) => (
+                    {dataList.map((data, index) => (
 
-                        <MenuItem value={data}>{data}</MenuItem>
+                        <MenuItem key={index} value={data}>{data}</MenuItem>
                     ))}
                 </Select>
 
             </FormControl>
         </Box>
-
     );
 };
 
 GeneralSelect.propTypes = {
 
-    value: PropTypes.bool.isRequired,
+    value: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
     setData: PropTypes.func.isRequired,

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Modularizando mi componente de form">
-      <change afterPath="$PROJECT_DIR$/src/components/GeneralSelect.js" afterDir="false" />
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Refactorizacion de varias funciones y cambios en la url del VideoGameServices">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/VideoGameApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GeneralSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GeneralSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GeneralTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GeneralTextField.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoGameTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

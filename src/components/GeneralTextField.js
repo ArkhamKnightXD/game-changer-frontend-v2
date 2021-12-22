@@ -24,7 +24,7 @@ const GeneralTextField = (props) => {
 
 GeneralTextField.propTypes = {
 
-    value: PropTypes.bool.isRequired,
+    value: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
