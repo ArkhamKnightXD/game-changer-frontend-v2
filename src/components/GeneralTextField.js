@@ -11,8 +11,8 @@ const GeneralTextField = (props) => {
         <TextField
             autoFocus
             margin="dense"
-            id={value}
-            name={value}
+            id={label}
+            name={label}
             label={label}
             type={type}
             value={value}
@@ -24,7 +24,10 @@ const GeneralTextField = (props) => {
 
 GeneralTextField.propTypes = {
 
-    value: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
     handleChange: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,

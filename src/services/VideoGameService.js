@@ -49,3 +49,19 @@ export const deleteVideoGameById = (videoGameId, setVideoGames) => {
         setVideoGames(response.data);
     });
 };
+
+
+export const getAllVideoGamesGenre = () => {
+
+    return [
+
+        "JRPG",
+        "RPG",
+        "Action",
+        "Strategy",
+        "Racing",
+        "Sport",
+        "Fighting",
+        "Hack"
+    ];
+};

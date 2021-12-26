@@ -59,8 +59,11 @@ export default function VideoGameTable(props) {
                     <TableRow>
                         <StyledTableCell>Name</StyledTableCell>
                         <StyledTableCell align="left">Developer</StyledTableCell>
-                        <StyledTableCell align="left">Genre</StyledTableCell>
                         <StyledTableCell align="left">Game Modes</StyledTableCell>
+                        <StyledTableCell align="left">Genre</StyledTableCell>
+                        <StyledTableCell align="left">Rating</StyledTableCell>
+                        <StyledTableCell align="left">Price</StyledTableCell>
+                        <StyledTableCell align="left">Stock</StyledTableCell>
                         <StyledTableCell align="left">Options</StyledTableCell>
                     </TableRow>
                 </TableHead>
@@ -72,8 +75,11 @@ export default function VideoGameTable(props) {
                                 {videoGame.name}
                             </StyledTableCell>
                             <StyledTableCell align="left">{videoGame.developer}</StyledTableCell>
-                            <StyledTableCell align="left">{videoGame.genre}</StyledTableCell>
                             <StyledTableCell align="left">{videoGame.gameModes}</StyledTableCell>
+                            <StyledTableCell align="left">{videoGame.genre}</StyledTableCell>
+                            <StyledTableCell align="left">{videoGame.rating}</StyledTableCell>
+                            <StyledTableCell align="left">{videoGame.sellPrice}</StyledTableCell>
+                            <StyledTableCell align="left">{videoGame.stock}</StyledTableCell>
 
                             <StyledTableCell align="left">
 

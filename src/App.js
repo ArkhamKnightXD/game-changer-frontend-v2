@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import AboutApp from "./apps/AboutApp";
 import ErrorApp from "./apps/ErrorApp";
 import NavigationBar from "./components/NavigationBar";
+import VideoGameCardApp from "./apps/VideoGameCardApp";
 
 export default function App() {
 
@@ -26,7 +27,11 @@ export default function App() {
 
               <Route path="/" element={<VideoGameApp/>}/>
 
-          {/*    Cuando el usuario ingrese una ruta que no existe podemos mostrar una pagina de error */}
+              {/*Probare que funcione la tarjeta de esta forma*/}
+              <Route path="/video-games" element={<VideoGameCardApp/>}/>
+
+
+              {/*    Cuando el usuario ingrese una ruta que no existe podemos mostrar una pagina de error */}
           {/*    El * Indica cualquier cosa que el usuario haya puesto que no sea una ruta valida redireccionara a errorApp*/}
               <Route path="*" element={<ErrorApp/>}/>
 
