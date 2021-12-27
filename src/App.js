@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
-import VideoGameApp from "./apps/VideoGameApp";
+import VideoGameApp from "./apps/videogame/VideoGameApp";
 //imports necesarios de react router y a browserRouter le cambie el nombre por router
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import AboutApp from "./apps/AboutApp";
+import AboutApp from "./apps/about/AboutApp";
 import ErrorApp from "./apps/ErrorApp";
 import NavigationBar from "./components/NavigationBar";
-import VideoGameCardApp from "./apps/VideoGameCardApp";
+import VideoGameCardApp from "./apps/videogame-card/VideoGameCardApp";
 
 export default function App() {
 

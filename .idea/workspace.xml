@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Refactorizacion de varias funciones y cambios en la url del VideoGameServices">
-      <change afterPath="$PROJECT_DIR$/src/apps/VideoGameCardApp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/VideoGameCard.js" afterDir="false" />
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Trabajando las tarjetas">
+      <change afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCardApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GeneralTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GeneralTextField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoGameTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/VideoGameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VideoGameService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/VideoGameCardApp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GeneralSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GeneralTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoGameCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +40,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/VideoGameCard.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1pqF5pLlKBwvjesuwsx0IhV0JGE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -67,11 +70,18 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="C:\Program Files (x86)\Yarn" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="ts.external.directory.path" value="C:\Users\karvi\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.5284.41\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Web Projects\own projects\game-changer-frontend-v2\src\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\about" />
+      <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\videogame-card" />
+      <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\components\form" />
+      <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\videogame" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -146,6 +156,7 @@
       <workItem from="1640034054963" duration="600000" />
       <workItem from="1640089582172" duration="34000" />
       <workItem from="1640117378112" duration="3126000" />
+      <workItem from="1640563199999" duration="4528000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -196,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632584106960</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Mejorando el crud y agregando mas datos para mostrar, trabajando en el modulo de cartas que mostraran los videojuegos">
+      <created>1640543390080</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640543390080</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +241,8 @@
     <MESSAGE value="Agregando los proptypes a mi componente de form dialog, para indicar el tipo de dato de cada prop" />
     <MESSAGE value="Actualizacion y limpieza de codigo" />
     <MESSAGE value="Refactorizacion de varias funciones y cambios en la url del VideoGameServices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactorizacion de varias funciones y cambios en la url del VideoGameServices" />
+    <MESSAGE value="Mejorando el crud y agregando mas datos para mostrar, trabajando en el modulo de cartas que mostraran los videojuegos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejorando el crud y agregando mas datos para mostrar, trabajando en el modulo de cartas que mostraran los videojuegos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

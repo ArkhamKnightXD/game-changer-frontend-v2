@@ -1,8 +1,7 @@
-import '../App.css';
 import React, {useEffect, useState} from 'react';
-import VideoGameTable from "../components/VideoGameTable";
-import {getAllVideoGames, getVideoGameById} from "../services/VideoGameService";
-import FormDialog from "../components/FormDialog";
+import VideoGameTable from "./VideoGameTable";
+import {getAllVideoGames, getVideoGameById} from "../../services/VideoGameService";
+import FormDialog from "../../components/form-components/FormDialog";
 import Button from "@material-ui/core/Button";
 
 //Esta es la forma ideal en la que manejo mis paginas en react, creo un componente App y aqui llamare los componentes a utilizar
@@ -41,7 +40,7 @@ const VideoGameApp = () => {
 
     return (
 
-        <div className="App">
+        <div className="text-center">
 
             <Button variant="contained" color="primary" onClick={handleOpenDialog}>
                 Add Video Game
