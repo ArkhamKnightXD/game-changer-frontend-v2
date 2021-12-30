@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
-const AboutPage = props => {
+const AboutPage = () => {
 
     //Si deseamos que desde un componente me redireccione a otro utilizamos useNavigate
     const navigate = useNavigate();

@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Trabajando las tarjetas">
-      <change afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCardApp.js" afterDir="false" />
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Mejorando como estan estructurados mis componentes y estados">
+      <change afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/VideoGameCardApp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GeneralSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralSelect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GeneralTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VideoGameCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +150,10 @@
       <workItem from="1640089582172" duration="34000" />
       <workItem from="1640117378112" duration="3126000" />
       <workItem from="1640563199999" duration="4528000" />
+      <workItem from="1640706095597" duration="208000" />
+      <workItem from="1640800355311" duration="1614000" />
+      <workItem from="1640890911322" duration="1138000" />
+      <workItem from="1640895786001" duration="1209000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>

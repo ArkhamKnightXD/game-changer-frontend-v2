@@ -10,7 +10,7 @@ const VideoGameCard = (props) => {
 
     return (
 
-        <Card className="w-25">
+        <Card style={{width: "25%", marginTop: "10%"}}>
 
             <CardMedia
                 component="img"
