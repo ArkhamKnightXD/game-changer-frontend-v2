@@ -5,7 +5,6 @@ import AboutApp from "./apps/about/AboutApp";
 import ErrorApp from "./apps/ErrorApp";
 import NavigationBar from "./components/NavigationBar";
 import VideoGameCardApp from "./apps/videogame-card/VideoGameCardApp";
-import Footer from "./components/Footer";
 //imports necesarios de react router y a browserRouter le cambie el nombre por router
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
@@ -36,8 +35,6 @@ export default function App() {
                 <Route path="*" element={<ErrorApp/>}/>
 
             </Routes>
-
-            <Footer/>
 
         </Router>
     );

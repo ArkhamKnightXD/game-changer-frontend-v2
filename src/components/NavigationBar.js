@@ -23,6 +23,10 @@ export default function NavigationBar() {
                         <a className="nav-link" href="/about/karvin">About</a>
                     </li>
 
+                    <li className="nav-item">
+                        <a className="nav-link" href="/video-games">Cards</a>
+                    </li>
+
                     {/*<li className="nav-item">*/}
                     {/*    <a className="nav-link disabled" href="#">Disabled</a>*/}
                     {/*</li>*/}

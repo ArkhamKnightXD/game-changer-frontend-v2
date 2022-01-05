@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import VideoGameTable from "./VideoGameTable";
 import {getAllVideoGames, getVideoGameById} from "../../services/VideoGameService";
 import FormDialog from "../../components/form-components/FormDialog";
 import Button from "@material-ui/core/Button";
+import EnhancedTable from "../../components/EnhancedTable";
 
 //Esta es la forma ideal en la que manejo mis paginas en react, creo un componente App y aqui llamare los componentes a utilizar
 const VideoGameApp = () => {
@@ -46,7 +46,9 @@ const VideoGameApp = () => {
                 Add Video Game
             </Button>
 
-            <VideoGameTable videoGames={videoGames} setVideoGames={setVideoGames} getActualVideoGame={getActualVideoGame}/>
+            {/*<VideoGameTable videoGames={videoGames} setVideoGames={setVideoGames} getActualVideoGame={getActualVideoGame}/>*/}
+
+            <EnhancedTable dataList={videoGames} getActualData={getActualVideoGame} setDataList={setVideoGames} />
 
             {/*Si no hay necesidad de tener componentes anidados, lo ideal es llamarlo todos aqui, para asi no tener que
             enviar props innecesarios a componentes intermedios para pasarlos al componente deseado*/}
