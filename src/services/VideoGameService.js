@@ -5,7 +5,7 @@ const URL = "http://localhost:88/api/v1";
 //las funciones de axios son promise, por lo tanto siempre que agregue el then no es necesario que utilice async/await
 //Las funciones async/await son basicamente promise simplificadas
 
-//para manejar los errores como los promise utilizamos try/catch, si deseamos hacer eso
+//para manejar los errores con los promise utilizamos try/catch, si deseamos hacer eso
 export const getAllVideoGames = (setVideoGames) => {
 
     axios.get(`${URL}/video-games`).then(response => {

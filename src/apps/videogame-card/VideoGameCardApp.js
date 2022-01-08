@@ -17,7 +17,9 @@ const VideoGameCardApp = () => {
 
             {videoGames.map((videoGame) => (
 
-                <VideoGameCard actualVideoGame={videoGame}/>
+                <div key={videoGame.id}>
+                    <VideoGameCard actualVideoGame={videoGame}/>
+                </div>
             ))}
 
         </div>

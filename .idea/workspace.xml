@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Mejorando como estan estructurados mis componentes y estados">
-      <change afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Agregada tabla con paginacion y configurada para funcionar con el backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCardApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCardApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EnhancedTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EnhancedTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EnhancedTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EnhancedTableHead.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +64,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="C:\Program Files (x86)\Yarn" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="ts.external.directory.path" value="C:\Users\karvi\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.5284.41\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Desarrollo-01\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.5457.55\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -153,7 +154,12 @@
       <workItem from="1640706095597" duration="208000" />
       <workItem from="1640800355311" duration="1614000" />
       <workItem from="1640890911322" duration="1138000" />
-      <workItem from="1640895786001" duration="1209000" />
+      <workItem from="1640895786001" duration="1235000" />
+      <workItem from="1641213619318" duration="171000" />
+      <workItem from="1641300357700" duration="6684000" />
+      <workItem from="1641388175369" duration="5355000" />
+      <workItem from="1641405472117" duration="5727000" />
+      <workItem from="1641648438577" duration="5146000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -211,7 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1640543390080</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Agregado footer al proyecto">
+      <created>1640897356379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640897356379</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Agregada tabla con paginacion y configurada para funcionar con el backend">
+      <created>1641415137669</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1641415137669</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +259,9 @@
     <MESSAGE value="Actualizacion y limpieza de codigo" />
     <MESSAGE value="Refactorizacion de varias funciones y cambios en la url del VideoGameServices" />
     <MESSAGE value="Mejorando el crud y agregando mas datos para mostrar, trabajando en el modulo de cartas que mostraran los videojuegos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejorando el crud y agregando mas datos para mostrar, trabajando en el modulo de cartas que mostraran los videojuegos" />
+    <MESSAGE value="Agregado footer al proyecto" />
+    <MESSAGE value="Agregada tabla con paginacion y configurada para funcionar con el backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregada tabla con paginacion y configurada para funcionar con el backend" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

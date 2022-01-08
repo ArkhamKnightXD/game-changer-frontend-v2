@@ -6,22 +6,16 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import EnhancedTableHead from "./EnhancedTableHead";
 import PropTypes from "prop-types";
-import {deleteVideoGameById} from "../services/VideoGameService";
+import Button from "@material-ui/core/Button";
 
 export default function EnhancedTable(props) {
 
-    const {dataList, setDataList, getActualData} = props;
+    const {dataList, deleteVideoGame, getActualData, headCells} = props;
 
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('calories');
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
-
-
-    const deleteVideoGame = (videoGameId) =>{
-
-        deleteVideoGameById(videoGameId, setDataList);
-    };
 
 
     const descendingComparator = (a, b, orderBy) => {
@@ -54,10 +48,6 @@ export default function EnhancedTable(props) {
         setOrderBy(property);
     };
 
-    //Borrare esto luego, esto no sirve para nada mas que quitar un warning momentaneo
-    if (dataList.length === 0)
-        deleteVideoGame(1);
-
 
     const handleChangePage = (event, newPage) => {
 
@@ -86,12 +76,8 @@ export default function EnhancedTable(props) {
                         sx={{ minWidth: 750 }}
                         aria-labelledby="tableTitle"
                     >
-                        <EnhancedTableHead
-                            order={order}
-                            orderBy={orderBy}
-                            onRequestSort={handleRequestSort}
-                            rowCount={dataList.length}
-                        />
+                        <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort} headCells={headCells}/>
+
                         <TableBody>
                       
                             {dataList.slice().sort(getComparator(order, orderBy))
@@ -101,7 +87,6 @@ export default function EnhancedTable(props) {
                                     return (
                                         <TableRow
                                             hover
-                                            onClick={() => getActualData(row.id)}
                                             role="checkbox"
                                             // aria-checked={isItemSelected}
                                             tabIndex={-1}
@@ -109,13 +94,17 @@ export default function EnhancedTable(props) {
                                             // selected={isItemSelected}
                                         >
 
-                                            <TableCell>{row.name}</TableCell>
-                                            <TableCell align="right">{row.developer}</TableCell>
-                                            <TableCell align="right">{row.gameModes}</TableCell>
-                                            <TableCell align="right">{row.genre}</TableCell>
-                                            <TableCell align="right">{row.rating}</TableCell>
-                                            <TableCell align="right">{row.sellPrice}</TableCell>
-                                            <TableCell align="right">{row.stock}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)}>{row.name}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.developer}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.gameModes}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.genre}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.rating}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.sellPrice}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.stock}</TableCell>
+
+                                            <TableCell><Button variant="contained" color="secondary"
+                                                               onClick={() => deleteVideoGame(row.id)}>Delete</Button> </TableCell>
+
                                         </TableRow>
                                     );
                                 })}
@@ -142,7 +131,8 @@ export default function EnhancedTable(props) {
 
 EnhancedTable.propTypes = {
 
+    headCells: PropTypes.array.isRequired,
     dataList: PropTypes.array.isRequired,
-    setDataList: PropTypes.func.isRequired,
+    deleteVideoGame: PropTypes.func.isRequired,
     getActualData: PropTypes.func.isRequired,
 };

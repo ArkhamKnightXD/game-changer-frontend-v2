@@ -30,7 +30,7 @@ const VideoGameCard = (props) => {
             </CardContent>
             <CardActions>
                 <Button variant="contained" color="primary" size="small">Share</Button>
-                <Button variant="contained" color="success" size="small">Learn More</Button>
+                <Button variant="contained" color="secondary" size="small">Learn More</Button>
             </CardActions>
         </Card>
     );
