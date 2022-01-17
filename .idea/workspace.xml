@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Agregada tabla con paginacion y configurada para funcionar con el backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCardApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCardApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EnhancedTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EnhancedTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EnhancedTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EnhancedTableHead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/VideoGameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VideoGameService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +157,8 @@
       <workItem from="1641388175369" duration="5355000" />
       <workItem from="1641405472117" duration="5727000" />
       <workItem from="1641648438577" duration="5146000" />
+      <workItem from="1641855276750" duration="3440000" />
+      <workItem from="1642363707842" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>

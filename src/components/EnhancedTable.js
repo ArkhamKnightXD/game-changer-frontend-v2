@@ -12,8 +12,8 @@ export default function EnhancedTable(props) {
 
     const {dataList, deleteVideoGame, getActualData, headCells} = props;
 
-    const [order, setOrder] = useState('asc');
-    const [orderBy, setOrderBy] = useState('calories');
+    const [order, setOrder] = useState("asc");
+    const [orderBy, setOrderBy] = useState("name");
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -79,7 +79,7 @@ export default function EnhancedTable(props) {
                         <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort} headCells={headCells}/>
 
                         <TableBody>
-                      
+
                             {dataList.slice().sort(getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row) => {

@@ -105,7 +105,7 @@ const VideoGameApp = () => {
             </Button>
 
             <EnhancedTable dataList={videoGames} getActualData={getActualVideoGame}
-                           deleteVideoGame={deleteVideoGame} headCells={headCells}/>
+                           deleteVideoGame={deleteVideoGame} headCells={headCells} setVideoGames={setVideoGames}/>
 
             {/*Si no hay necesidad de tener componentes anidados, lo ideal es llamarlo todos aqui, para asi no tener que
             enviar props innecesarios a componentes intermedios para pasarlos al componente deseado*/}

@@ -15,6 +15,16 @@ export const getAllVideoGames = (setVideoGames) => {
 };
 
 
+export const getAllVideoGamesWithPagination = (setVideoGames, paginationData) => {
+
+    axios.get(`${URL}/video-games/pagination/${paginationData.pageSize}/${paginationData.sortIdentifier}/${paginationData.isAscending}`)
+        .then(response => {
+
+        setVideoGames(response.data);
+    });
+};
+
+
 export const getVideoGameById = (videoGameId, setActualVideoGame) => {
 
     axios.get(`${URL}/video-games/${videoGameId}`).then(response => {
