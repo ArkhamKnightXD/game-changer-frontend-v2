@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {deleteVideoGameById, getAllVideoGames, getVideoGameById} from "../../services/VideoGameService";
 import FormDialog from "../../components/form-components/FormDialog";
 import Button from "@material-ui/core/Button";
-import EnhancedTable from "../../components/EnhancedTable";
+import VideoGameTable from "./VideoGameTable";
 
 const headCells = [
     {
@@ -104,8 +104,8 @@ const VideoGameApp = () => {
                 Add Video Game
             </Button>
 
-            <EnhancedTable dataList={videoGames} getActualData={getActualVideoGame}
-                           deleteVideoGame={deleteVideoGame} headCells={headCells} setVideoGames={setVideoGames}/>
+            <VideoGameTable dataList={videoGames} getActualData={getActualVideoGame}
+                            deleteVideoGame={deleteVideoGame} headCells={headCells} setVideoGames={setVideoGames}/>
 
             {/*Si no hay necesidad de tener componentes anidados, lo ideal es llamarlo todos aqui, para asi no tener que
             enviar props innecesarios a componentes intermedios para pasarlos al componente deseado*/}

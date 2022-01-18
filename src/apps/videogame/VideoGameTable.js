@@ -1,107 +1,138 @@
-import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import {deleteVideoGameById} from "../../services/VideoGameService";
-import Button from "@material-ui/core/Button";
+import React, {useState} from 'react';
+import TableRow from "@material-ui/core/TableRow";
+import {Box, Paper, TableCell, TablePagination} from "@material-ui/core";
+import TableContainer from "@material-ui/core/TableContainer";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import VideoGameTableHead from "./VideoGameTableHead";
 import PropTypes from "prop-types";
-
-const StyledTableCell = withStyles((theme) => ({
-    head: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
-    },
-    body: {
-        fontSize: 14,
-    },
-}))(TableCell);
-
-
-const StyledTableRow = withStyles((theme) => ({
-    root: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
-    },
-}))(TableRow);
-
-const useStyles = makeStyles({
-    table: {
-        minWidth: 700,
-    },
-});
+import Button from "@material-ui/core/Button";
 
 export default function VideoGameTable(props) {
 
-    const {videoGames, setVideoGames, getActualVideoGame} = props;
-    const classes = useStyles();
+    const {dataList, deleteVideoGame, getActualData, headCells} = props;
+
+    const [order, setOrder] = useState("asc");
+    const [orderBy, setOrderBy] = useState("name");
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
 
 
-    const deleteVideoGame = (videoGameId) =>{
+    const descendingComparator = (a, b, orderBy) => {
 
-        deleteVideoGameById(videoGameId, setVideoGames);
+        if (b[orderBy] < a[orderBy]) {
+
+            return -1;
+        }
+        if (b[orderBy] > a[orderBy]) {
+
+            return 1;
+        }
+
+        return 0;
     };
+
+
+    const getComparator = (order, orderBy) => {
+
+        return order === 'desc'
+            ? (a, b) => descendingComparator(a, b, orderBy)
+            : (a, b) => -descendingComparator(a, b, orderBy);
+    };
+
+
+    const handleRequestSort = (event, property) => {
+
+        const isAsc = orderBy === property && order === 'asc';
+        setOrder(isAsc ? 'desc' : 'asc');
+        setOrderBy(property);
+    };
+
+
+    const handleChangePage = (event, newPage) => {
+
+        setPage(newPage);
+    };
+
+
+    const handleChangeRowsPerPage = (event) => {
+
+        setRowsPerPage(event.target.value);
+
+        setPage(0);
+    };
+
+    // Avoid a layout jump when reaching the last page with empty rows.
+    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dataList.length) : 0;
 
 
     return (
 
-        <TableContainer component={Paper}>
+        <Box sx={{ width: '100%' }}>
 
-            <h1>Video Games</h1>
+            <Paper sx={{ width: '100%', mb: 2 }}>
+                <TableContainer>
+                    <Table
+                        sx={{ minWidth: 750 }}
+                        aria-labelledby="tableTitle"
+                    >
+                        <VideoGameTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort} headCells={headCells}/>
 
-            <Table className={classes.table} aria-label="customized table">
-                <TableHead>
-                    <TableRow>
-                        <StyledTableCell>Name</StyledTableCell>
-                        <StyledTableCell align="left">Developer</StyledTableCell>
-                        <StyledTableCell align="left">Game Modes</StyledTableCell>
-                        <StyledTableCell align="left">Genre</StyledTableCell>
-                        <StyledTableCell align="left">Rating</StyledTableCell>
-                        <StyledTableCell align="left">Price</StyledTableCell>
-                        <StyledTableCell align="left">Stock</StyledTableCell>
-                        <StyledTableCell align="left">Options</StyledTableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
+                        <TableBody>
 
-                    {videoGames.map((videoGame) => (
-                        <StyledTableRow key={videoGame.id} >
-                            <StyledTableCell component="th" scope="row">
-                                {videoGame.name}
-                            </StyledTableCell>
-                            <StyledTableCell align="left">{videoGame.developer}</StyledTableCell>
-                            <StyledTableCell align="left">{videoGame.gameModes}</StyledTableCell>
-                            <StyledTableCell align="left">{videoGame.genre}</StyledTableCell>
-                            <StyledTableCell align="left">{videoGame.rating}</StyledTableCell>
-                            <StyledTableCell align="left">{videoGame.sellPrice}</StyledTableCell>
-                            <StyledTableCell align="left">{videoGame.stock}</StyledTableCell>
+                            {dataList.slice().sort(getComparator(order, orderBy))
+                                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                .map((row) => {
 
-                            <StyledTableCell align="left">
+                                    return (
+                                        <TableRow
+                                            hover
+                                            role="checkbox"
+                                            // aria-checked={isItemSelected}
+                                            tabIndex={-1}
+                                            key={row.id}
+                                            // selected={isItemSelected}
+                                        >
 
-                                <Button variant="contained" color="primary"
-                                        onClick={() => getActualVideoGame(videoGame.id)}>Edit</Button>
+                                            <TableCell onClick={() => getActualData(row.id)}>{row.name}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.developer}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.gameModes}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.genre}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.rating}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.sellPrice}</TableCell>
+                                            <TableCell onClick={() => getActualData(row.id)} align="right">{row.stock}</TableCell>
 
-                                <Button variant="contained" color="secondary"
-                                        onClick={() => deleteVideoGame(videoGame.id)}>Delete</Button>
+                                            <TableCell><Button variant="contained" color="secondary"
+                                                               onClick={() => deleteVideoGame(row.id)}>Delete</Button> </TableCell>
 
-                            </StyledTableCell>
-                        </StyledTableRow>
-                    ))}
-                </TableBody>
-            </Table>
-
-        </TableContainer>
+                                        </TableRow>
+                                    );
+                                })}
+                            {emptyRows > 0 && (
+                                <TableRow>
+                                    <TableCell colSpan={6} />
+                                </TableRow>
+                            )}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+                <TablePagination
+                    rowsPerPageOptions={[5, 10, 25]}
+                    component="div"
+                    count={dataList.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onChangeRowsPerPage={handleChangeRowsPerPage}
+                    onChangePage={handleChangePage}/>
+            </Paper>
+        </Box>
     );
 }
 
 VideoGameTable.propTypes = {
 
-    setVideoGames: PropTypes.func.isRequired,
-    videoGames: PropTypes.array.isRequired,
-    getActualVideoGame: PropTypes.func.isRequired,
+    headCells: PropTypes.array.isRequired,
+    dataList: PropTypes.array.isRequired,
+    deleteVideoGame: PropTypes.func.isRequired,
+    getActualData: PropTypes.func.isRequired,
 };

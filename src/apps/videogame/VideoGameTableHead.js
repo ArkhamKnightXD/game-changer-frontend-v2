@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 
-export default function EnhancedTableHead(props) {
+export default function VideoGameTableHead(props) {
 
     const { order, orderBy, onRequestSort, headCells} = props;
 
@@ -39,7 +39,7 @@ export default function EnhancedTableHead(props) {
     );
 }
 
-EnhancedTableHead.propTypes = {
+VideoGameTableHead.propTypes = {
 
     headCells: PropTypes.array.isRequired,
     onRequestSort: PropTypes.func.isRequired,
