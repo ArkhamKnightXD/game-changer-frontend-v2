@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import TableRow from "@material-ui/core/TableRow";
-import {Box, Paper, TableCell, TablePagination} from "@material-ui/core";
-import TableContainer from "@material-ui/core/TableContainer";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
+import TableRow from "@mui/material/TableRow";
+import {Box, Paper, TableCell, TablePagination} from "@mui/material";
+import TableContainer from "@mui/material/TableContainer";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
 import VideoGameTableHead from "./VideoGameTableHead";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 
 export default function VideoGameTable(props) {
 
@@ -122,8 +122,8 @@ export default function VideoGameTable(props) {
                     count={dataList.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
-                    onChangeRowsPerPage={handleChangeRowsPerPage}
-                    onChangePage={handleChangePage}/>
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                    onPageChange={handleChangePage}/>
             </Paper>
         </Box>
     );

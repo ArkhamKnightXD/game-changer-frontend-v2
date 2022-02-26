@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {Dialog, DialogActions, DialogContent, DialogTitle,} from "@material-ui/core";
+import {Dialog, DialogActions, DialogContent, DialogTitle,} from "@mui/material";
 import {getAllVideoGamesGenre, saveVideoGame, updateVideoGame} from "../../services/VideoGameService";
 //Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
 import PropTypes from 'prop-types';
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 import GeneralTextField from "./GeneralTextField";
 import GeneralSelect from "./GeneralSelect";
 

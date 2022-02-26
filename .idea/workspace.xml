@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Mejorada paginacion">
-      <change afterPath="$PROJECT_DIR$/src/components/SimpleTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame-card/VideoGameCardApp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EnhancedTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EnhancedTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/VideoGameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VideoGameService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SimpleTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form-components/GeneralSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1pqF5pLlKBwvjesuwsx0IhV0JGE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -163,6 +167,7 @@
       <workItem from="1641855276750" duration="3440000" />
       <workItem from="1642363707842" duration="2489000" />
       <workItem from="1642466292096" duration="1854000" />
+      <workItem from="1645887930496" duration="2605000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -257,7 +262,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {deleteVideoGameById, getAllVideoGames, getVideoGameById} from "../../services/VideoGameService";
 import FormDialog from "../../components/form-components/FormDialog";
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 import VideoGameTable from "./VideoGameTable";
 
 const headCells = [

@@ -1,6 +1,6 @@
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import {TableCell, TableSortLabel} from "@material-ui/core";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import {TableCell, TableSortLabel} from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
 
