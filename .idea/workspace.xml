@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Mejorada paginacion">
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/form-components/ReactFormDialog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SimpleTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form-components/GeneralSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralSelect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -67,9 +63,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="C:\Program Files (x86)\Yarn" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="ts.external.directory.path" value="C:\Users\Desarrollo-01\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.5457.55\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="ts.external.directory.path" value="C:\Users\karvi\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.5284.41\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -168,6 +167,9 @@
       <workItem from="1642363707842" duration="2489000" />
       <workItem from="1642466292096" duration="1854000" />
       <workItem from="1645887930496" duration="2605000" />
+      <workItem from="1646191725724" duration="79000" />
+      <workItem from="1646192478770" duration="706000" />
+      <workItem from="1646598257530" duration="6420000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -262,6 +264,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
