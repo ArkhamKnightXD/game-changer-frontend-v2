@@ -1,45 +1,81 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {Dialog, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField,} from "@mui/material";
 import {getAllVideoGamesGenre, saveVideoGame, updateVideoGame} from "../../services/VideoGameService";
 //Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
 import PropTypes from 'prop-types';
 import Button from "@mui/material/Button";
-import {useForm} from "react-hook-form";
+import {useForm, Controller} from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+
+//Siempre es recomendable tener un objeto con los valores por defecto que deberia de tener el formulario
+const defaultValues = {
+
+    id: 0,
+    name: "",
+    developer: "",
+    genre: "RPG",
+    gameModes: "",
+    sellPrice: 0,
+    rating: 0,
+    stock: 0
+};
+
+//Aqui especifico me schema de validacion de mi formulario
+const schema = yup.object().shape({
+
+    name: yup.string().required("Ingrese el nombre").min(2, "Debe de tener minimo 2 caracteres"),
+    developer: yup.string().required("Ingrese la desarrolladora").min(2, "Debe de tener minimo 2 caracteres"),
+    gameModes: yup.string().required("Ingrese el modo de juego").min(2, "Debe de tener minimo 2 caracteres"),
+    sellPrice: yup.number().required("Ingrese el precio").min(0, "El valor debe de ser mayor que 0"),
+    rating: yup.number().required("Ingrese el rating").min(0, "El valor debe de ser mayor que 0"),
+    stock: yup.number().required("Ingrese el stock").min(0, "El valor debe de ser mayor que 0"),
+}).required();
+
 
 export default function FormDialog(props) {
 
     //obtengo todos los elementos que utilizare de mi props mediante Destructuring
-    const {actualVideoGame, handleClose, isDialogOpen, setVideoGames} = props;
+    const {actualVideoGame, setIsDialogOpen, isDialogOpen, setVideoGames} = props;
 
+    //Mediante getValues podremos obtener todos los valores del form mediante un objeto
+    // const {name, developer, genre, stock, sellPrice, rating} = getValues();
     //Comento getValues ya que por ahora no lo utilizo, solo lo defini para entendimiento de su uso
-    const {register, handleSubmit, setValue, /*getValues,*/} = useForm();
+    const {handleSubmit, reset, watch, control, formState: {errors, isValid}} = useForm({
+        //Mediante formState puedo acceder a los errores enviados por schema
+        // y el campo isValid es un boolean que me dara true si no hay errores en el formulario
 
-    //En mi componente lo ideal es solo definir estados y variables que seran utilizados solos en este mismo, hay excepciones claro
-    const [id, setId] = useState(0);
-    const [name, setName] = useState("");
+        //Aqui paso el objeto con los valores iniciales del formulario
+        defaultValues,
+
+        //Aqui le indico que deseo que se revise las validaciones que debe de tener el formulario, cada vez que haya un cambio en algun input
+        mode: "onChange",
+
+        //De esta forma indico el metodo que estare utilizando para validar los campos de mi formulario
+        // en este caso estare utilizando yup, por lo tantos utilizo el metodo yupResolver
+        resolver: yupResolver(schema)
+    });
+
+    //Con watch puedo obtener los datos de los campos de los formularios, parecido a getValues, pero esto me da los datos 1 por 1
+    const id = watch("id");
+    const name = watch("name");
+
 
     //la forma mas facil de tener el mismo dialog para crear y editar es simplemente pasarle los datos del actualgame
     //a los estados correspondientes, siempre y cuando el juego actual este presente
     useEffect(() => {
 
         //verifico que el videojuego actual este para asi llenar los estados
-        if(actualVideoGame){
+        //el campo reset setea todos los campos del formulario con los datos del objeto que le enviemos
+        if(actualVideoGame)
+            reset(actualVideoGame);
 
-            setValue("id", actualVideoGame.id)
-            setValue("name", actualVideoGame.name);
-            setValue("developer", actualVideoGame.developer);
-            setValue("genre", actualVideoGame.genre);
-            setValue("gameModes", actualVideoGame.gameModes);
-            setValue("sellPrice", actualVideoGame.sellPrice);
-            setValue("rating", actualVideoGame.rating);
-            setValue("stock", actualVideoGame.stock);
-
-            setId(actualVideoGame.id);
-            setName(actualVideoGame.name);
-        }
+        else
+            reset(defaultValues);
 
         //el useEffect se ejecutara cada vez el videojuego actual cambie por lo tanto siempre tendre el juego correcto a la hora de editar
-    }, [actualVideoGame, setValue]);
+    }, [actualVideoGame, reset]);
 
 
     const onSubmit = (data) => {
@@ -53,39 +89,22 @@ export default function FormDialog(props) {
         else
             saveVideoGame(videoGameToSave, setVideoGames);
 
-        resetFormData();
+        handleCloseDialog();
     };
 
 
-    const resetFormData = () => {
+    const handleCloseDialog = () => {
 
-        //Mediante getValues podremos obtener todos los valores del form mediante un objeto
-        // const {name, developer, genre, stock, sellPrice, rating} = getValues();
+        reset(defaultValues);
 
-        //Mediante setValue podemos llenar los campos del formulario mediante codigo,
-        // perfecto para cuando se quier limpiar los valores del formulario o para cuando vayamos a editar
-        //Primero indicamos el nombre del campo y luego el valor que tendra el campo
-        setValue("name", "");
-        setValue("developer", "");
-        setValue("genre", "");
-        setValue("gameModes", "");
-        setValue("sellPrice", "");
-        setValue("rating", "");
-        setValue("stock", "");
-
-        handleClose();
-    };
-
-    const handleCancel = () => {
-
-        resetFormData();
-    };
+        setIsDialogOpen(false);
+    }
 
 
     return (
         <div>
 
-            <Dialog open={isDialogOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
+            <Dialog open={isDialogOpen} onClose={handleCloseDialog} aria-labelledby="form-dialog-title">
 
                 {id === 0 ? (
 
@@ -103,52 +122,164 @@ export default function FormDialog(props) {
 
                         {/*Para hacer uso de react hook-form debemos de agregar el campo de register, seguido del
                             nombre que tendra nuestro campo, esto sera lo que se evaluara a la hora de presionar el boton submit*/}
-                        <TextField{...register("name")} autoFocus margin="dense" label="Nombre" type="text" fullWidth/>
+                        {/*<TextField{...register("name")} autoFocus margin="dense"*/}
+                        {/*          label="Nombre" type="text" fullWidth/>*/}
 
-                        <TextField{...register("developer")} autoFocus margin="dense"
-                                  label="Developer" type="text" fullWidth/>
+                        {/*Cuando se utiliza controller no hay que utilizar register*/}
+                        {/*En controller seteamos dentro de render el textField y le enviamos un campo field,
+                        que dentro contiene los valores value y onChange, por lo tanto no debemos especificar
+                        estos valores en el textField, el controller tiene ventajas vs la forma normal
+                         a la hora de validacion y renderizado*/}
+                        <Controller
+                            name="name"
+                            control={control}
+                            render={({field}) => (
 
-                        <TextField {...register("gameModes")} autoFocus margin="dense"
-                                   label="Game Modes" type="text" fullWidth/>
+                                <TextField
+                                    {...field}
+                                    autoFocus
+                                    margin="dense"
+                                    label="Nombre"
+                                    type="text"
+                                    error={!!errors.name}
+                                    helperText={errors?.name?.message}
+                                    required
+                                    fullWidth
+                                />
+                            )}
+                        />
 
-                        <TextField {...register("rating")} autoFocus margin="dense"
-                                   label="Rating" type="number" fullWidth/>
+                        <Controller
+                            name="developer"
+                            control={control}
+                            render={({field}) => (
 
-                        <TextField {...register("sellPrice")} autoFocus margin="dense"
-                                  label="Selling Price" type="number" fullWidth/>
+                                <TextField
+                                    {...field}
+                                    autoFocus
+                                    margin="dense"
+                                    label="Developer"
+                                    type="text"
+                                    error={!!errors.developer}
+                                    helperText={errors?.developer?.message}
+                                    required
+                                    fullWidth
+                                />
+                            )}
+                        />
 
-                        <TextField {...register("stock")} autoFocus margin="dense"
-                                   label="Stock" type="number" fullWidth/>
+                        <Controller
+                            name="gameModes"
+                            control={control}
+                            render={({field}) => (
+
+                                <TextField
+                                    {...field}
+                                    autoFocus
+                                    margin="dense"
+                                    label="Game Modes"
+                                    type="text"
+                                    error={!!errors.gameModes}
+                                    helperText={errors?.gameModes?.message}
+                                    required
+                                    fullWidth
+                                />
+                            )}
+                        />
+
+                        <Controller
+                            name="rating"
+                            control={control}
+                            render={({field}) => (
+
+                                <TextField
+                                    {...field}
+                                    autoFocus
+                                    margin="dense"
+                                    label="Rating"
+                                    type="number"
+                                    error={!!errors.rating}
+                                    helperText={errors?.rating?.message}
+                                    required
+                                    fullWidth
+                                />
+                            )}
+                        />
+
+                        <Controller
+                            name="sellPrice"
+                            control={control}
+                            render={({field}) => (
+
+                                <TextField
+                                    {...field}
+                                    autoFocus
+                                    margin="dense"
+                                    label="Selling Price"
+                                    type="number"
+                                    error={!!errors.sellPrice}
+                                    helperText={errors?.sellPrice?.message}
+                                    required
+                                    fullWidth
+                                />
+                            )}
+                        />
+
+                        <Controller
+                            name="stock"
+                            control={control}
+                            render={({field}) => (
+
+                                <TextField
+                                    {...field}
+                                    autoFocus
+                                    margin="dense"
+                                    label="Stock"
+                                    type="number"
+                                    error={!!errors.stock}
+                                    helperText={errors?.stock?.message}
+                                    required
+                                    fullWidth
+                                />
+                            )}
+                        />
+
+                        <Controller
+                            name="genre"
+                            control={control}
+                            render={({field}) => (
+
+                                <FormControl fullWidth>
+
+                                    <InputLabel id="demo-simple-select-label">Genre</InputLabel>
+
+                                    <Select
+                                        {...field}
+                                    >
+                                        {getAllVideoGamesGenre().map((data, index) => (
+
+                                            <MenuItem key={index} value={data}>{data}</MenuItem>
+                                        ))}
+                                    </Select>
+
+                                </FormControl>
+                            )}
+                        />
 
 
-                        <FormControl fullWidth>
-
-                            <InputLabel id="demo-simple-select-label">Genero</InputLabel>
-
-                            <Select
-                                {...register("genre")}
-                                defaultValue={"RPG"}
-                            >
-                                {getAllVideoGamesGenre().map((data, index) => (
-
-                                    <MenuItem key={index} value={data}>{data}</MenuItem>
-                                ))}
-                            </Select>
-
-                        </FormControl>
-
+                        {/*Los botones para crear y editar estaran desabilitado siempre y cuando haya errores en el form */}
                         {id === 0 ? (
-                                <Button variant="contained" color="primary" type="submit">
+                                <Button variant="contained" color="primary" type="submit" disabled={!isValid}>
                                     Add Video Game
                                 </Button>
                             ):
 
-                            <Button variant="contained" color="primary" type="submit">
+                            <Button variant="contained" color="primary" type="submit" disabled={!isValid}>
                                 Update Video Game
                             </Button>
                         }
 
-                        <Button variant="contained" color="secondary" onClick={handleCancel}>
+                        <Button variant="contained" color="secondary" onClick={handleCloseDialog}>
                             Cancel
                         </Button>
 
@@ -166,7 +297,7 @@ export default function FormDialog(props) {
 FormDialog.propTypes = {
 
     isDialogOpen: PropTypes.bool.isRequired,
-    handleClose: PropTypes.func.isRequired,
+    setIsDialogOpen: PropTypes.func.isRequired,
     setVideoGames: PropTypes.func.isRequired,
     actualVideoGame: PropTypes.object
 };

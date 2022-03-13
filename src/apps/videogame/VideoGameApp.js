@@ -70,12 +70,6 @@ const VideoGameApp = () => {
     };
 
 
-    const handleCloseDialog = () => {
-
-        setIsDialogOpen(false);
-    };
-
-
     const getActualVideoGame = (videoGameId) => {
 
         getVideoGameById(videoGameId, setActualVideoGame);
@@ -110,7 +104,7 @@ const VideoGameApp = () => {
             {/*Si no hay necesidad de tener componentes anidados, lo ideal es llamarlo todos aqui, para asi no tener que
             enviar props innecesarios a componentes intermedios para pasarlos al componente deseado*/}
             <FormDialog isDialogOpen={isDialogOpen} setVideoGames={setVideoGames}
-                        handleClose={handleCloseDialog} actualVideoGame={actualVideoGame} />
+                        setIsDialogOpen={setIsDialogOpen} actualVideoGame={actualVideoGame} />
 
         </div>
 
