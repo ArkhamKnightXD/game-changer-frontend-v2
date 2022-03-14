@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Mejorada paginacion">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form-components/ReactFormDialog.js" afterDir="false" />
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Eliminando bootstrap y agregando tailwindcss al proyecto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewNavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewNavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SimpleTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/GeneralTextField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -32,6 +36,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/dist/output.css" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,6 +59,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -169,7 +177,12 @@
       <workItem from="1645887930496" duration="2605000" />
       <workItem from="1646191725724" duration="79000" />
       <workItem from="1646192478770" duration="706000" />
-      <workItem from="1646598257530" duration="6420000" />
+      <workItem from="1646598257530" duration="6817000" />
+      <workItem from="1646875604688" duration="30000" />
+      <workItem from="1647201787792" duration="4806000" />
+      <workItem from="1647219528689" duration="8000" />
+      <workItem from="1647220642341" duration="3003000" />
+      <workItem from="1647224566081" duration="148000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -248,7 +261,28 @@
       <option name="project" value="LOCAL" />
       <updated>1642381427929</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Implementanda la nueva libreria react-hook-form para el manejo de formularios. Funciona correctamente y ya con esto reemplace la forma basica que utilizo para trabajar los formularios">
+      <created>1646605114947</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1646605114947</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Implementando completamente react-hook-form junto a la libreria de validaciones yup">
+      <created>1647206603647</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647206603647</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Eliminando bootstrap y agregando tailwindcss al proyecto">
+      <created>1647223556245</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1647223556245</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +313,10 @@
     <MESSAGE value="Agregado footer al proyecto" />
     <MESSAGE value="Agregada tabla con paginacion y configurada para funcionar con el backend" />
     <MESSAGE value="Mejorada paginacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejorada paginacion" />
+    <MESSAGE value="Implementanda la nueva libreria react-hook-form para el manejo de formularios. Funciona correctamente y ya con esto reemplace la forma basica que utilizo para trabajar los formularios" />
+    <MESSAGE value="Implementando completamente react-hook-form junto a la libreria de validaciones yup" />
+    <MESSAGE value="Eliminando bootstrap y agregando tailwindcss al proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminando bootstrap y agregando tailwindcss al proyecto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
