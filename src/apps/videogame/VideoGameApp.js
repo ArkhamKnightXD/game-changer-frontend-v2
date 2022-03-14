@@ -92,9 +92,9 @@ const VideoGameApp = () => {
 
     return (
 
-        <div className="text-center">
+        <>
 
-            <Button variant="contained" color="primary" onClick={handleOpenDialog}>
+            <Button variant="contained" color="primary" className="" onClick={handleOpenDialog}>
                 Add Video Game
             </Button>
 
@@ -106,7 +106,7 @@ const VideoGameApp = () => {
             <FormDialog isDialogOpen={isDialogOpen} setVideoGames={setVideoGames}
                         setIsDialogOpen={setIsDialogOpen} actualVideoGame={actualVideoGame} />
 
-        </div>
+        </>
 
     );
 };
