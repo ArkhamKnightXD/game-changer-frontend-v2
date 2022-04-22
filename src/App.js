@@ -1,10 +1,10 @@
 import React from "react";
-import VideoGameApp from "./apps/videogame/VideoGameApp";
-import AboutApp from "./apps/about/AboutApp";
-import ErrorApp from "./apps/ErrorApp";
+import VideoGameApp from "./views/Videogames/VideoGameApp";
+import AboutApp from "./views/About/AboutApp";
+import ErrorApp from "./views/ErrorApp";
 //imports necesarios de react router y a browserRouter le cambie el nombre por router
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import NewNavigationBar from "./components/NewNavigationBar";
+import NavigationBar from "./components/NavigationBar";
 
 export default function App() {
 
@@ -15,7 +15,7 @@ export default function App() {
 
             {/*Es ideal llamar el navigation bar dentro de esto para asi no tener que llamarla en cada componente*/}
             {/*<NavigationBar/>*/}
-            <NewNavigationBar/>
+            <NavigationBar/>
 
             <Routes>
 

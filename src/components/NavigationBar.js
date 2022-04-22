@@ -1,40 +1,141 @@
+import {useState} from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
 
-export default function NavigationBar() {
+const pages = ['Video Games', 'About', 'Cards'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+const NavigationBar = () => {
+
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
+
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
 
     return (
+        <AppBar position="static" >
+            <Container maxWidth="xl">
+                <Toolbar disableGutters>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                    >
+                        Game-Changer
+                    </Typography>
 
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                        >
+                            {pages.map((page) => (
+                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page}</Typography>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                    >
+                        LOGO
+                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        {pages.map((page) => (
+                            <Button
+                                key={page}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                {page}
+                            </Button>
+                        ))}
+                    </Box>
 
-            <a className="navbar-brand" href="/">Game Changer</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"/>
-            </button>
-
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-
-                    <li className="nav-item active">
-                        <a className="nav-link" href="/">VideoGames <span className="sr-only">(current)</span></a>
-                    </li>
-
-                    <li className="nav-item">
-                        <a className="nav-link" href="/about/karvin">About</a>
-                    </li>
-
-                    <li className="nav-item">
-                        <a className="nav-link" href="/video-games">Cards</a>
-                    </li>
-
-                    {/*<li className="nav-item">*/}
-                    {/*    <a className="nav-link disabled" href="#">Disabled</a>*/}
-                    {/*</li>*/}
-                </ul>
-                <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search"/>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
+                    <Box sx={{ flexGrow: 0 }}>
+                        <Tooltip title="Open settings">
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                            </IconButton>
+                        </Tooltip>
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            {settings.map((setting) => (
+                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                    <Typography textAlign="center">{setting}</Typography>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </AppBar>
     );
-}
+};
+export default NavigationBar;

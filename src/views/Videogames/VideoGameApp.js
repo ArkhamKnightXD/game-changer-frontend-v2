@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {deleteVideoGameById, getAllVideoGames, getVideoGameById} from "../../services/VideoGameService";
-import FormDialog from "../../components/form-components/FormDialog";
+import FormDialog from "../../components/FormDialog";
 import Button from "@mui/material/Button";
 import VideoGameTable from "./VideoGameTable";
 
@@ -94,7 +94,7 @@ const VideoGameApp = () => {
 
         <>
 
-            <Button variant="contained" color="primary" className="" onClick={handleOpenDialog}>
+            <Button variant="contained" color="primary" className="align-content-center" onClick={handleOpenDialog}>
                 Add Video Game
             </Button>
 
@@ -107,7 +107,6 @@ const VideoGameApp = () => {
                         setIsDialogOpen={setIsDialogOpen} actualVideoGame={actualVideoGame} />
 
         </>
-
     );
 };
 

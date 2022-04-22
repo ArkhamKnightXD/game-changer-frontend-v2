@@ -2,16 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Eliminando bootstrap y agregando tailwindcss al proyecto">
+      <change afterPath="$PROJECT_DIR$/src/test/TestComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/TestComponent.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/sum.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/ErrorApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ErrorApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About/AboutApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About/AboutPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Videogames/VideoGameApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Videogames/VideoGameTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Videogames/VideoGameTableHead.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewNavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewNavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SimpleTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewNavigationBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/VideoGameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VideoGameService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -83,17 +99,18 @@
       <recent name="C:\Web Projects\own projects\game-changer-frontend-v2\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\Own Projects\game-changer-frontend-v2\src\components" />
       <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\about" />
       <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\videogame-card" />
       <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\components\form" />
       <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\videogame" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="npm.Test">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <configuration name="npm start" type="js.build_tools.npm">
+    <configuration name="Start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -103,9 +120,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Test" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="npm.npm start" />
+      <item itemvalue="npm.Start" />
+      <item itemvalue="npm.Test" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -183,6 +211,10 @@
       <workItem from="1647219528689" duration="8000" />
       <workItem from="1647220642341" duration="3003000" />
       <workItem from="1647224566081" duration="148000" />
+      <workItem from="1650574872888" duration="602000" />
+      <workItem from="1650635902856" duration="830000" />
+      <workItem from="1650636739012" duration="2227000" />
+      <workItem from="1650639583094" duration="389000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -298,7 +330,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
