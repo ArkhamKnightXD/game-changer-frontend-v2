@@ -84,3 +84,9 @@ export const getAllVideoGamesGenre = () => {
         "Hack"
     ];
 };
+
+
+export const sum = (a, b) => {
+
+    return a + b;
+}

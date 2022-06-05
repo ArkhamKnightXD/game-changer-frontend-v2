@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {Dialog, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField,} from "@mui/material";
-import {getAllVideoGamesGenre, saveVideoGame, updateVideoGame} from "../../services/VideoGameService";
+import {getAllVideoGamesGenre, saveVideoGame, updateVideoGame} from "../services/VideoGameService";
 //Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
 import PropTypes from 'prop-types';
 import Button from "@mui/material/Button";
@@ -82,7 +82,7 @@ export default function FormDialog(props) {
 
         const videoGameToSave = data;
 
-        //si el id actual esta disponible que actualice el videogame y sino que solo cree uno nuevo
+        //si el id actual esta disponible que actualice el Videogames y sino que solo cree uno nuevo
         if (data.id)
             updateVideoGame(videoGameToSave, setVideoGames);
 
