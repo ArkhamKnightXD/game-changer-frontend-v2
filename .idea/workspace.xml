@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="Eliminando bootstrap y agregando tailwindcss al proyecto">
+    <list default="true" id="cda2f729-9f5d-473e-bd8a-09dea1d22fcb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/apps/gallery/Gallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apps/gallery/useGalleryStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/about/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/about/AboutPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/videogame/VideoGameTableHead.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewNavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewNavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SimpleTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form-components/FormDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/VideoGameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VideoGameService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/apps" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -71,7 +66,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="C:\Program Files (x86)\Yarn" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\karvi\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\212.5284.41\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -80,9 +75,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps" />
       <recent name="C:\Web Projects\own projects\game-changer-frontend-v2\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\gallery" />
       <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\about" />
       <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\apps\videogame-card" />
       <recent name="C:\Projects\Web Projects\Frontend Projects\game-changer-frontend-v2\src\components\form" />
@@ -182,7 +179,12 @@
       <workItem from="1647201787792" duration="4806000" />
       <workItem from="1647219528689" duration="8000" />
       <workItem from="1647220642341" duration="3003000" />
-      <workItem from="1647224566081" duration="148000" />
+      <workItem from="1647224566081" duration="377000" />
+      <workItem from="1650855547433" duration="186000" />
+      <workItem from="1650933904032" duration="706000" />
+      <workItem from="1653256388967" duration="15000" />
+      <workItem from="1653445225897" duration="4659000" />
+      <workItem from="1654309545941" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="Solucionado problema a la hora de utilizar el dialog, ahora estoy trabajando en el create">
       <created>1622908750626</created>
@@ -282,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647223556245</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Eliminando import base de react de todos los componentes, que desde react 17 ya no es necesario hacer este import">
+      <created>1647224939648</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1647224939648</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +325,8 @@
     <MESSAGE value="Implementanda la nueva libreria react-hook-form para el manejo de formularios. Funciona correctamente y ya con esto reemplace la forma basica que utilizo para trabajar los formularios" />
     <MESSAGE value="Implementando completamente react-hook-form junto a la libreria de validaciones yup" />
     <MESSAGE value="Eliminando bootstrap y agregando tailwindcss al proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminando bootstrap y agregando tailwindcss al proyecto" />
+    <MESSAGE value="Eliminando import base de react de todos los componentes, que desde react 17 ya no es necesario hacer este import" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminando import base de react de todos los componentes, que desde react 17 ya no es necesario hacer este import" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

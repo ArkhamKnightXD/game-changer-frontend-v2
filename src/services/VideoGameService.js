@@ -61,6 +61,15 @@ export const deleteVideoGameById = (videoGameId, setVideoGames) => {
 };
 
 
+export const getAllShips = (setShips) => {
+
+    axios.get(`${URL}/api/v1/ships/`).then(r => {
+
+        setShips(r.data);
+    });
+};
+
+
 export const getAllVideoGamesGenre = () => {
 
     return [

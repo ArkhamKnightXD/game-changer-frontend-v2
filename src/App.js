@@ -5,6 +5,7 @@ import ErrorApp from "./apps/ErrorApp";
 //imports necesarios de react router y a browserRouter le cambie el nombre por router
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import NewNavigationBar from "./components/NewNavigationBar";
+import Gallery from "./apps/gallery/Gallery";
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
                 <Route path="/about/:username" element={<AboutApp/>}/>
 
                 <Route path="/" element={<VideoGameApp/>}/>
+                <Route path="/gallery" element={<Gallery/>}/>
 
                 {/*    Cuando el usuario ingrese una ruta que no existe podemos mostrar una pagina de error */}
                 {/* El * Indica cualquier cosa que el usuario haya puesto que no sea una ruta valida redireccionara a errorApp*/}
