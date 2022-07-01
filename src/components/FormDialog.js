@@ -5,7 +5,7 @@ import {getAllVideoGamesGenre, saveVideoGame, updateVideoGame} from "../services
 import PropTypes from 'prop-types';
 import Button from "@mui/material/Button";
 import {useForm, Controller} from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 
@@ -68,7 +68,7 @@ export default function FormDialog(props) {
 
         //verifico que el videojuego actual este para asi llenar los estados
         //el campo reset setea todos los campos del formulario con los datos del objeto que le enviemos
-        if(actualVideoGame)
+        if (actualVideoGame)
             reset(actualVideoGame);
 
         else
@@ -98,7 +98,7 @@ export default function FormDialog(props) {
         reset(defaultValues);
 
         setIsDialogOpen(false);
-    }
+    };
 
 
     return (
@@ -109,7 +109,7 @@ export default function FormDialog(props) {
                 {id === 0 ? (
 
                         <DialogTitle id="form-dialog-title">New Video Game</DialogTitle>
-                    ):
+                    ) :
 
                     <DialogTitle id="form-dialog-title">{name}</DialogTitle>
                 }
@@ -272,7 +272,7 @@ export default function FormDialog(props) {
                                 <Button variant="contained" color="primary" type="submit" disabled={!isValid}>
                                     Add Video Game
                                 </Button>
-                            ):
+                            ) :
 
                             <Button variant="contained" color="primary" type="submit" disabled={!isValid}>
                                 Update Video Game
