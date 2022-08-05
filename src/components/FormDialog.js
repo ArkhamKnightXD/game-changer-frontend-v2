@@ -33,11 +33,9 @@ const schema = yup.object().shape({
     stock: yup.number().required("Ingrese el stock").min(0, "El valor debe de ser mayor que 0"),
 }).required();
 
+//obtengo todos los elementos que utilizare de mi props mediante Destructuring
+export default function FormDialog({actualVideoGame, setIsDialogOpen, isDialogOpen, setVideoGames}) {
 
-export default function FormDialog(props) {
-
-    //obtengo todos los elementos que utilizare de mi props mediante Destructuring
-    const {actualVideoGame, setIsDialogOpen, isDialogOpen, setVideoGames} = props;
 
     //Mediante getValues podremos obtener todos los valores del form mediante un objeto
     // const {name, developer, genre, stock, sellPrice, rating} = getValues();

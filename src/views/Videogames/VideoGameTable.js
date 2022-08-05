@@ -7,15 +7,83 @@ import TableBody from "@mui/material/TableBody";
 import VideoGameTableHead from "./VideoGameTableHead";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
+import DeleteRowElementDialog from "../../components/DeleteRowElementDialog";
+import {deleteVideoGameById} from "../../services/VideoGameService";
 
-export default function VideoGameTable(props) {
+const headCells = [
+    {
+        id: 'name',
+        numeric: false,
+        disablePadding: true,
+        label: 'Name',
+    },
+    {
+        id: 'developer',
+        numeric: true,
+        disablePadding: false,
+        label: 'Developer',
+    },
+    //El id debe de ser igual que la propiedad que se envia desde el backend
+    {
+        id: 'gameModes',
+        numeric: true,
+        disablePadding: false,
+        label: 'Game Modes',
+    },
+    {
+        id: 'genre',
+        numeric: true,
+        disablePadding: false,
+        label: 'Genre',
+    },
+    {
+        id: 'rating',
+        numeric: true,
+        disablePadding: false,
+        label: 'Rating',
+    },
+    {
+        id: 'sellPrice',
+        numeric: true,
+        disablePadding: false,
+        label: 'Price',
+    },
+    {
+        id: 'stock',
+        numeric: true,
+        disablePadding: false,
+        label: 'Stock',
+    },
+    {
+        id: 'options',
+        numeric: false,
+        disablePadding: false,
+        label: 'Options',
+    },
+];
 
-    const {dataList, deleteVideoGame, getActualData, headCells} = props;
+export default function VideoGameTable({dataList, getActualData, setVideoGames}) {
 
     const [order, setOrder] = useState("asc");
     const [orderBy, setOrderBy] = useState("name");
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [isOpenDialog, setIsOpenDialog] = useState(false);
+    const [idForDelete, setIdForDelete] = useState(0);
+
+
+    const handleOpenDeleteDialog = (videoGameId) => {
+
+        setIdForDelete(videoGameId);
+
+        setIsOpenDialog(true);
+    };
+
+
+    const deleteRowData = () => {
+
+        deleteVideoGameById(idForDelete, setVideoGames);
+    };
 
 
     const descendingComparator = (a, b, orderBy) => {
@@ -76,7 +144,8 @@ export default function VideoGameTable(props) {
                         sx={{ minWidth: 750 }}
                         aria-labelledby="tableTitle"
                     >
-                        <VideoGameTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort} headCells={headCells}/>
+                        <VideoGameTableHead order={order} orderBy={orderBy}
+                                            onRequestSort={handleRequestSort} headCells={headCells}/>
 
                         <TableBody>
 
@@ -88,10 +157,8 @@ export default function VideoGameTable(props) {
                                         <TableRow
                                             hover
                                             role="checkbox"
-                                            // aria-checked={isItemSelected}
                                             tabIndex={-1}
                                             key={row.id}
-                                            // selected={isItemSelected}
                                         >
 
                                             <TableCell onClick={() => getActualData(row.id)}>{row.name}</TableCell>
@@ -103,7 +170,7 @@ export default function VideoGameTable(props) {
                                             <TableCell onClick={() => getActualData(row.id)} align="right">{row.stock}</TableCell>
 
                                             <TableCell><Button variant="contained" color="secondary"
-                                                               onClick={() => deleteVideoGame(row.id)}>Delete</Button> </TableCell>
+                                                               onClick={() => handleOpenDeleteDialog(row.id)}>Delete</Button> </TableCell>
 
                                         </TableRow>
                                     );
@@ -125,14 +192,15 @@ export default function VideoGameTable(props) {
                     onRowsPerPageChange={handleChangeRowsPerPage}
                     onPageChange={handleChangePage}/>
             </Paper>
+
+            <DeleteRowElementDialog isOpen={isOpenDialog} deleteData={deleteRowData} setIsOpen={setIsOpenDialog}/>
         </Box>
     );
 }
 
 VideoGameTable.propTypes = {
 
-    headCells: PropTypes.array.isRequired,
     dataList: PropTypes.array.isRequired,
-    deleteVideoGame: PropTypes.func.isRequired,
     getActualData: PropTypes.func.isRequired,
+    setVideoGames: PropTypes.func.isRequired
 };
