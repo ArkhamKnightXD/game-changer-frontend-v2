@@ -26,10 +26,10 @@ const DeleteRowElementDialog = ({isOpen, setIsOpen, deleteData}) => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-            <DialogTitle id="alert-dialog-title">Desea eliminar elemento?</DialogTitle>
+            <DialogTitle id="alert-dialog-title">Desea eliminar este elemento?</DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    Al "Confirmar" usted estará eliminando elemento.
+                    Al "Confirmar" usted estará eliminando este elemento.
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

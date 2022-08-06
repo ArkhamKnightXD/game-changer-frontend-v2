@@ -1,9 +1,59 @@
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import {TableCell, TableSortLabel} from "@mui/material";
+import {TableCell, TableHead, TableRow, TableSortLabel} from "@mui/material";
 import PropTypes from "prop-types";
 
-export default function VideoGameTableHead({ order, orderBy, onRequestSort, headCells}) {
+const headCells = [
+    {
+        id: 'name',
+        numeric: false,
+        disablePadding: true,
+        label: 'Name',
+    },
+    {
+        id: 'developer',
+        numeric: true,
+        disablePadding: false,
+        label: 'Developer',
+    },
+    //El id debe de ser igual que la propiedad que se envia desde el backend
+    {
+        id: 'gameModes',
+        numeric: true,
+        disablePadding: false,
+        label: 'Game Modes',
+    },
+    {
+        id: 'genre',
+        numeric: true,
+        disablePadding: false,
+        label: 'Genre',
+    },
+    {
+        id: 'rating',
+        numeric: true,
+        disablePadding: false,
+        label: 'Rating',
+    },
+    {
+        id: 'sellPrice',
+        numeric: true,
+        disablePadding: false,
+        label: 'Price',
+    },
+    {
+        id: 'stock',
+        numeric: true,
+        disablePadding: false,
+        label: 'Stock',
+    },
+    {
+        id: 'options',
+        numeric: false,
+        disablePadding: false,
+        label: 'Options',
+    },
+];
+
+export default function VideoGameTableHead({ order, orderBy, onRequestSort}) {
 
     const createSortHandler = (event, property) => {
 
@@ -37,7 +87,6 @@ export default function VideoGameTableHead({ order, orderBy, onRequestSort, head
 
 VideoGameTableHead.propTypes = {
 
-    headCells: PropTypes.array.isRequired,
     onRequestSort: PropTypes.func.isRequired,
     order: PropTypes.oneOf(['asc', 'desc']).isRequired,
     orderBy: PropTypes.string.isRequired
