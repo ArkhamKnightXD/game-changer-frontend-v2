@@ -5,17 +5,33 @@ import DeleteRowElementDialog from "../../components/DeleteRowElementDialog";
 import FormDialog from "../../components/FormDialog";
 import useCrudLogic from "./useCrudLogic";
 import useTableLogic from "./useTableLogic";
+import {deleteVideoGameById} from "../../services/VideoGameService";
 
 export default function VideoGameTable() {
 
-    const {videoGames, setVideoGames, isDeleteDialogOpen, setIsDeleteDialogOpen,
-        isDialogOpen, setIsDialogOpen, actualVideoGame, deleteRowData, getActualVideoGameById,
-        handleOpenDeleteDialog, handleOpenFormDialog} = useCrudLogic();
+    const {videoGames, setVideoGames, isDialogOpen, setIsDialogOpen,
+        actualVideoGame, getActualVideoGameById} = useCrudLogic();
 
     const {page, rowsPerPage, handleChangeRowsPerPage, handleChangePage, getComparator} = useTableLogic();
 
     const [order, setOrder] = useState("asc");
     const [orderBy, setOrderBy] = useState("name");
+    const [idForDelete, setIdForDelete] = useState(0);
+    const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+
+
+    const handleOpenDeleteDialog = (videoGameId) => {
+
+        setIdForDelete(videoGameId);
+
+        setIsDeleteDialogOpen(true);
+    };
+
+
+    const deleteRowData = () => {
+
+        deleteVideoGameById(idForDelete, setVideoGames);
+    };
 
 
     const handleRequestSort = (event, property) => {
@@ -34,7 +50,8 @@ export default function VideoGameTable() {
 
         <Box sx={{ width: '100%' }}>
 
-            <Button variant="contained" color="primary" className="align-content-center" onClick={handleOpenFormDialog}>
+            <Button variant="contained" color="primary" className="align-content-center"
+                    onClick={() => setIsDialogOpen(true)}>
                 Add Video Game
             </Button>
 
