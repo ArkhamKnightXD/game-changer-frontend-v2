@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 import Button from "@mui/material/Button";
 
@@ -48,11 +47,5 @@ const DeleteRowElementDialog = ({isOpen, setIsOpen, deleteData}) => {
     );
 };
 
-DeleteRowElementDialog.propTypes = {
-
-    isOpen: PropTypes.bool.isRequired,
-    setIsOpen: PropTypes.func.isRequired,
-    deleteData: PropTypes.func.isRequired
-};
 
 export default DeleteRowElementDialog;

@@ -20,7 +20,7 @@ export default function VideoGameTable() {
     const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
 
 
-    const handleOpenDeleteDialog = (videoGameId) => {
+    const handleOpenDeleteDialog = (videoGameId: number): void => {
 
         setIdForDelete(videoGameId);
 

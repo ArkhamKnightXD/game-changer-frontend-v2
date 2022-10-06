@@ -8,7 +8,7 @@ const useCrudLogic = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 
-    const getActualVideoGameById = (videoGameId) => {
+    const getActualVideoGameById = (videoGameId: number): void => {
 
         getVideoGameById(videoGameId, setActualVideoGame);
 

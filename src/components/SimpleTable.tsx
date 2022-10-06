@@ -8,7 +8,6 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {deleteVideoGameById} from "../services/VideoGameService";
 import Button from "@mui/material/Button";
-import PropTypes from "prop-types";
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -97,10 +96,3 @@ export default function SimpleTable(props) {
         </TableContainer>
     );
 }
-
-SimpleTable.propTypes = {
-
-    setVideoGames: PropTypes.func.isRequired,
-    videoGames: PropTypes.array.isRequired,
-    getActualVideoGame: PropTypes.func.isRequired,
-};

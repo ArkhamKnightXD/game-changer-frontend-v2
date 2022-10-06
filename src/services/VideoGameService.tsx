@@ -2,11 +2,16 @@ import axios from "axios";
 
 const URL = "http://localhost:88";
 
+interface VideoGame {
+    id: number;
+    name: string;
+}
+
 //las funciones de axios son promise, por lo tanto siempre que agregue el then no es necesario que utilice async/await
 //Las funciones async/await son basicamente promise simplificadas
 
 //para manejar los errores con los promise utilizamos try/catch, si deseamos hacer eso
-export const getAllVideoGames = (setVideoGames) => {
+export const getAllVideoGames = (setVideoGames: (data: VideoGame[]) => void) => {
 
     axios.get(`${URL}/api/v1/video-games`).then(response => {
 
@@ -15,7 +20,7 @@ export const getAllVideoGames = (setVideoGames) => {
 };
 
 
-export const getAllVideoGamesWithPagination = (setVideoGames, paginationData) => {
+export const getAllVideoGamesWithPagination = (setVideoGames: (data: VideoGame[]) => void, paginationData: any) => {
 
     axios.get(`${URL}/api/v1/video-games/pagination/${paginationData.pageSize}/${paginationData.sortIdentifier}/${paginationData.isAscending}`)
         .then(response => {
@@ -25,7 +30,7 @@ export const getAllVideoGamesWithPagination = (setVideoGames, paginationData) =>
 };
 
 
-export const getVideoGameById = (videoGameId, setActualVideoGame) => {
+export const getVideoGameById = (videoGameId: number, setActualVideoGame: (videoGame: VideoGame) => void) => {
 
     axios.get(`${URL}/api/v1/video-games/${videoGameId}`).then(response => {
 
@@ -34,7 +39,7 @@ export const getVideoGameById = (videoGameId, setActualVideoGame) => {
 };
 
 
-export const saveVideoGame = (videoGame, setVideoGames) => {
+export const saveVideoGame = (videoGame: VideoGame, setVideoGames: (data: VideoGame[]) => void) => {
 
     axios.post(`${URL}/api/v1/video-games`, videoGame).then(response => {
 
@@ -43,7 +48,7 @@ export const saveVideoGame = (videoGame, setVideoGames) => {
 };
 
 
-export const updateVideoGame = (videoGameToUpdate, setVideoGames) => {
+export const updateVideoGame = (videoGameToUpdate: VideoGame, setVideoGames: (data: VideoGame[]) => void) => {
 
     axios.put(`${URL}/api/v1/video-games`, videoGameToUpdate).then(response => {
 
@@ -52,7 +57,7 @@ export const updateVideoGame = (videoGameToUpdate, setVideoGames) => {
 };
 
 
-export const deleteVideoGameById = (videoGameId, setVideoGames) => {
+export const deleteVideoGameById = (videoGameId: number, setVideoGames: (data: VideoGame[]) => void) => {
 
     axios.delete(`${URL}/api/v1/video-games/${videoGameId}`).then(response => {
 
@@ -77,7 +82,7 @@ export const getAllVideoGamesGenre = () => {
 };
 
 
-export const sum = (a, b) => {
+export const sum = (a: number, b: number): number => {
 
     return a + b;
 }
