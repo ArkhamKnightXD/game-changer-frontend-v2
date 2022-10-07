@@ -20,10 +20,10 @@ const NavigationBar = () => {
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
 
-    const handleOpenNavMenu = (event) => {
+    const handleOpenNavMenu = (event: any) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
+    const handleOpenUserMenu = (event: any) => {
         setAnchorElUser(event.currentTarget);
     };
 

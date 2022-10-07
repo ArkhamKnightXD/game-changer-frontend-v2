@@ -1,18 +1,19 @@
 import {useState} from "react";
 
+//Todo remover todos los any cuando sepa el tipo de dato.
 const useTableLogic = () => {
 
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
 
-    const handleChangePage = (event, newPage) => {
+    const handleChangePage = (event: any, newPage: number) => {
 
         setPage(newPage);
     };
 
 
-    const handleChangeRowsPerPage = (event) => {
+    const handleChangeRowsPerPage = (event: any) => {
 
         setRowsPerPage(event.target.value);
 
@@ -20,7 +21,7 @@ const useTableLogic = () => {
     };
 
 
-    const descendingComparator = (a, b, orderBy) => {
+    const descendingComparator = (a: [], b: [], orderBy: any): number => {
 
         if (b[orderBy] < a[orderBy]) {
 
@@ -35,11 +36,11 @@ const useTableLogic = () => {
     };
 
 
-    const getComparator = (order, orderBy) => {
+    const getComparator = (order: string, orderBy: string) => {
 
         return order === 'desc'
-            ? (a, b) => descendingComparator(a, b, orderBy)
-            : (a, b) => -descendingComparator(a, b, orderBy);
+            ? (a:[], b: []) => descendingComparator(a, b, orderBy)
+            : (a:[], b: []) => -descendingComparator(a, b, orderBy);
     };
 
 

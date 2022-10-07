@@ -7,9 +7,7 @@ const VideoGameApp = () => {
     return (
 
         <>
-
             <VideoGameTable />
-
         </>
     );
 };

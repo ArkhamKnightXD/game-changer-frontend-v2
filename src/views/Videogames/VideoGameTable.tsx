@@ -34,7 +34,7 @@ export default function VideoGameTable() {
     };
 
 
-    const handleRequestSort = (event, property) => {
+    const handleRequestSort = (event: any, property: string): void => {
 
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');

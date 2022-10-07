@@ -1,10 +1,22 @@
 import {useEffect, useState} from "react";
 import {getAllVideoGames, getVideoGameById} from "../../services/VideoGameService";
 
+interface VideoGame {
+    id: number,
+    name: string,
+    developer: string,
+    gameModes: string,
+    genre: string,
+    rating: number,
+    sellPrice: number,
+    stock: number
+}
+
 const useCrudLogic = () => {
 
-    const [videoGames, setVideoGames] = useState([]);
-    const [actualVideoGame, setActualVideoGame] = useState({});
+    //Para arreglos y objetos, si tengo la interfaz definida, la mejor de declarar los useState es de esta forma.
+    const [videoGames, setVideoGames] = useState<VideoGame[]>([{id: 0, name: "test"}]);
+    const [actualVideoGame, setActualVideoGame] = useState<VideoGame>({id: 0, name: "test"});
     const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 

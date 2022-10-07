@@ -5,6 +5,12 @@ const URL = "http://localhost:88";
 interface VideoGame {
     id: number;
     name: string;
+    developer: string;
+    gameModes: string;
+    genre: string;
+    rating: number;
+    sellPrice: number;
+    stock: number;
 }
 
 //las funciones de axios son promise, por lo tanto siempre que agregue el then no es necesario que utilice async/await

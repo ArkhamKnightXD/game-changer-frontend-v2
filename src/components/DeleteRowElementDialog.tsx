@@ -1,7 +1,14 @@
 import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 import Button from "@mui/material/Button";
 
-const DeleteRowElementDialog = ({isOpen, setIsOpen, deleteData}) => {
+interface RowElements {
+
+    isOpen: boolean,
+    setIsOpen: (data: boolean) => void,
+    deleteData: () => void
+}
+
+const DeleteRowElementDialog = ({isOpen, setIsOpen, deleteData}: RowElements) => {
 
     const handleClose = () => {
 
@@ -9,7 +16,7 @@ const DeleteRowElementDialog = ({isOpen, setIsOpen, deleteData}) => {
     };
 
 
-    const handleDelete = (event) => {
+    const handleDelete = (event: any) => {
 
         event.stopPropagation();
         deleteData();

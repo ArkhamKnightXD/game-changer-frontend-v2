@@ -2,7 +2,6 @@ import {useEffect} from "react";
 import {Dialog, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField,} from "@mui/material";
 import {getAllVideoGamesGenre, saveVideoGame, updateVideoGame} from "../services/VideoGameService";
 //Este es el modulo a importar para utilizar los proptypes, esto la primera vez debe ser agregado al package-json
-import PropTypes from 'prop-types';
 import Button from "@mui/material/Button";
 import {useForm, Controller} from "react-hook-form";
 import {yupResolver} from '@hookform/resolvers/yup';
@@ -34,8 +33,29 @@ const schema = yup.object().shape({
 }).required();
 
 
+interface VideoGame {
+
+    id: number;
+    name: string;
+    developer: string;
+    gameModes: string;
+    genre: string;
+    rating: number;
+    sellPrice: number;
+    stock: number;
+}
+
+interface FormDialogProps {
+
+    actualVideoGame: VideoGame,
+    setIsDialogOpen: (value: boolean) => void,
+    isDialogOpen: boolean,
+    setVideoGames: (value: VideoGame[]) => void,
+}
+
+
 //obtengo todos los elementos que utilizare de mi props mediante Destructuring
-export default function FormDialog({actualVideoGame, setIsDialogOpen, isDialogOpen, setVideoGames}) {
+export default function FormDialog({actualVideoGame, setIsDialogOpen, isDialogOpen, setVideoGames} :FormDialogProps) {
 
 
     //Mediante getValues podremos obtener todos los valores del form mediante un objeto
@@ -77,7 +97,7 @@ export default function FormDialog({actualVideoGame, setIsDialogOpen, isDialogOp
     }, [actualVideoGame, reset]);
 
 
-    const onSubmit = (data) => {
+    const onSubmit = (data: VideoGame) => {
 
         const videoGameToSave = data;
 
@@ -293,10 +313,10 @@ export default function FormDialog({actualVideoGame, setIsDialogOpen, isDialogOp
 
 //De esta form-components declaro los tipos de datos que tienen los props que recibo, esto no es completamente necesario
 //pero le da claridad al codigo ya que asi se de forma clara lo que llega en cada prop
-FormDialog.propTypes = {
-
-    isDialogOpen: PropTypes.bool.isRequired,
-    setIsDialogOpen: PropTypes.func.isRequired,
-    setVideoGames: PropTypes.func.isRequired,
-    actualVideoGame: PropTypes.object
-};
+// FormDialog.propTypes = {
+//
+//     isDialogOpen: PropTypes.bool.isRequired,
+//     setIsDialogOpen: PropTypes.func.isRequired,
+//     setVideoGames: PropTypes.func.isRequired,
+//     actualVideoGame: PropTypes.object
+// };

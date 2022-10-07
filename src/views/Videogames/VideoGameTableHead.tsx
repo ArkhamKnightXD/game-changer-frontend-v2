@@ -1,5 +1,4 @@
 import {TableCell, TableHead, TableRow, TableSortLabel} from "@mui/material";
-import PropTypes from "prop-types";
 
 const headCells = [
     {
@@ -53,9 +52,15 @@ const headCells = [
     },
 ];
 
-export default function VideoGameTableHead({ order, orderBy, onRequestSort}) {
+interface VideoGameTableHeadProps {
+    order: any,
+    orderBy: any,
+    onRequestSort: (event: any, property:string) => void
+}
 
-    const createSortHandler = (event, property) => {
+export default function VideoGameTableHead({ order, orderBy, onRequestSort}: VideoGameTableHeadProps) {
+
+    const createSortHandler = (event: any, property: string) => {
 
         onRequestSort(event, property);
     };
@@ -84,10 +89,3 @@ export default function VideoGameTableHead({ order, orderBy, onRequestSort}) {
         </TableHead>
     );
 }
-
-VideoGameTableHead.propTypes = {
-
-    onRequestSort: PropTypes.func.isRequired,
-    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-    orderBy: PropTypes.string.isRequired
-};
