@@ -2,14 +2,14 @@ import {useEffect, useState} from "react";
 import {getAllVideoGames, getVideoGameById} from "../../services/VideoGameService";
 
 interface VideoGame {
-    id: number,
-    name: string,
-    developer: string,
-    gameModes: string,
-    genre: string,
-    rating: number,
-    sellPrice: number,
-    stock: number
+    id: number;
+    name: string;
+    developer: string;
+    gameModes: string;
+    genre: string;
+    rating: number;
+    sellPrice: number;
+    stock: number;
 }
 
 const useCrudLogic = () => {
