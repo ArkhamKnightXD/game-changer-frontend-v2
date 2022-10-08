@@ -1,4 +1,15 @@
-import {useState} from "react";
+import React, {useState} from "react";
+
+interface VideoGame {
+    id: number;
+    name: string;
+    developer: string;
+    gameModes: string;
+    genre: string;
+    rating: number;
+    sellPrice: number;
+    stock: number;
+}
 
 //Todo remover todos los any cuando sepa el tipo de dato.
 const useTableLogic = () => {
@@ -21,7 +32,7 @@ const useTableLogic = () => {
     };
 
 
-    const descendingComparator = (a: [], b: [], orderBy: any): number => {
+    const descendingComparator = (a: any, b: any, orderBy: string): number => {
 
         if (b[orderBy] < a[orderBy]) {
 
@@ -39,8 +50,8 @@ const useTableLogic = () => {
     const getComparator = (order: string, orderBy: string) => {
 
         return order === 'desc'
-            ? (a:[], b: []) => descendingComparator(a, b, orderBy)
-            : (a:[], b: []) => -descendingComparator(a, b, orderBy);
+            ? (a:VideoGame, b: VideoGame) => descendingComparator(a, b, orderBy)
+            : (a:VideoGame, b: VideoGame) => -descendingComparator(a, b, orderBy);
     };
 
 

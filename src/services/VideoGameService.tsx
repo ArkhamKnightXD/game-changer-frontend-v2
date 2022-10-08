@@ -14,7 +14,7 @@ interface VideoGame {
 }
 
 //las funciones de axios son promise, por lo tanto siempre que agregue el then no es necesario que utilice async/await
-//Las funciones async/await son basicamente promise simplificadas
+//Las funciones async/await son básicamente promise simplificadas.
 
 //para manejar los errores con los promise utilizamos try/catch, si deseamos hacer eso
 export const getAllVideoGames = (setVideoGames: (data: VideoGame[]) => void) => {
@@ -72,7 +72,7 @@ export const deleteVideoGameById = (videoGameId: number, setVideoGames: (data: V
 };
 
 
-export const getAllVideoGamesGenre = () => {
+export const getAllVideoGamesGenre = (): string[] => {
 
     return [
 

@@ -12,11 +12,14 @@ interface VideoGame {
     stock: number;
 }
 
+const initialState: VideoGame = {id: 0, developer: "test", name: "test",
+    gameModes: "test", stock: 1, genre: "RPG", rating: 7, sellPrice: 100};
+
 const useCrudLogic = () => {
 
-    //Para arreglos y objetos, si tengo la interfaz definida, la mejor de declarar los useState es de esta forma.
-    const [videoGames, setVideoGames] = useState<VideoGame[]>([{id: 0, name: "test"}]);
-    const [actualVideoGame, setActualVideoGame] = useState<VideoGame>({id: 0, name: "test"});
+    //Para arreglos y objetos, si tengo la interfaz definida, la mejor forma de declarar los useState es de esta forma.
+    const [videoGames, setVideoGames] = useState<VideoGame[]>([initialState]);
+    const [actualVideoGame, setActualVideoGame] = useState<VideoGame>(initialState);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 
@@ -27,7 +30,7 @@ const useCrudLogic = () => {
         setIsDialogOpen(true);
     };
 
-    //idealmente es mejor manejar los estados desde el componente padre y mandarle esto estados a los componentes hijos
+    //idealmente es mejor manejar los estados desde el componente padre y mandarle estos estados a los componentes hijos.
     useEffect(() => {
 
         getAllVideoGames(setVideoGames);

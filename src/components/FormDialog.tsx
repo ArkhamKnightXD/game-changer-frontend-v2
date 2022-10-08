@@ -45,12 +45,13 @@ interface VideoGame {
     stock: number;
 }
 
+//Esta será la nueva forma en la que trabajaré mis props. Esto es superior a prop-types.
 interface FormDialogProps {
 
-    actualVideoGame: VideoGame,
-    setIsDialogOpen: (value: boolean) => void,
-    isDialogOpen: boolean,
-    setVideoGames: (value: VideoGame[]) => void,
+    actualVideoGame: VideoGame;
+    setIsDialogOpen: (value: boolean) => void;
+    isDialogOpen: boolean;
+    setVideoGames: (value: VideoGame[]) => void;
 }
 
 
@@ -313,6 +314,7 @@ export default function FormDialog({actualVideoGame, setIsDialogOpen, isDialogOp
 
 //De esta form-components declaro los tipos de datos que tienen los props que recibo, esto no es completamente necesario
 //pero le da claridad al codigo ya que asi se de forma clara lo que llega en cada prop
+//Ya no utilizaré más esto debido a que estoy utilizando interfaces de typescript
 // FormDialog.propTypes = {
 //
 //     isDialogOpen: PropTypes.bool.isRequired,

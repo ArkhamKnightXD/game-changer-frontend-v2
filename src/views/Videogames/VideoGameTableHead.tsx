@@ -13,7 +13,7 @@ const headCells = [
         disablePadding: false,
         label: 'Developer',
     },
-    //El id debe de ser igual que la propiedad que se envia desde el backend
+    //Él, id debe de ser igual que la propiedad que se envía desde el backend.
     {
         id: 'gameModes',
         numeric: true,
@@ -53,9 +53,9 @@ const headCells = [
 ];
 
 interface VideoGameTableHeadProps {
-    order: any,
-    orderBy: any,
-    onRequestSort: (event: any, property:string) => void
+    order: any;
+    orderBy: any;
+    onRequestSort: (event: any, property:string) => void;
 }
 
 export default function VideoGameTableHead({ order, orderBy, onRequestSort}: VideoGameTableHeadProps) {
@@ -79,7 +79,8 @@ export default function VideoGameTableHead({ order, orderBy, onRequestSort}: Vid
                         <TableSortLabel
                             active={orderBy === headCell.id}
                             direction={orderBy === headCell.id ? order : 'asc'}
-                            onClick={(event) => {createSortHandler(event, headCell.id)}}
+                            onClick={(event) =>
+                            {createSortHandler(event, headCell.id)}}
                         >
                             {headCell.label}
                         </TableSortLabel>

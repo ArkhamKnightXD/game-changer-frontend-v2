@@ -1,5 +1,7 @@
 import {useState} from 'react';
-import {Box, Button, Paper, Table, TableBody, TableCell, TableContainer, TablePagination, TableRow} from "@mui/material";
+import {
+    Box, Button, Paper, Table, TableBody, TableCell, TableContainer, TablePagination, TableRow
+} from "@mui/material";
 import VideoGameTableHead from "./VideoGameTableHead";
 import DeleteRowElementDialog from "../../components/DeleteRowElementDialog";
 import FormDialog from "../../components/FormDialog";
@@ -9,8 +11,10 @@ import {deleteVideoGameById} from "../../services/VideoGameService";
 
 export default function VideoGameTable() {
 
-    const {videoGames, setVideoGames, isDialogOpen, setIsDialogOpen,
-        actualVideoGame, getActualVideoGameById} = useCrudLogic();
+    const {
+        videoGames, setVideoGames, isDialogOpen, setIsDialogOpen,
+        actualVideoGame, getActualVideoGameById
+    } = useCrudLogic();
 
     const {page, rowsPerPage, handleChangeRowsPerPage, handleChangePage, getComparator} = useTableLogic();
 
@@ -20,7 +24,7 @@ export default function VideoGameTable() {
     const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
 
 
-    const handleOpenDeleteDialog = (videoGameId: number): void => {
+    const handleOpenDeleteDialog = (videoGameId: number) => {
 
         setIdForDelete(videoGameId);
 
@@ -34,7 +38,7 @@ export default function VideoGameTable() {
     };
 
 
-    const handleRequestSort = (event: any, property: string): void => {
+    const handleRequestSort = (event: any, property: string) => {
 
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
@@ -48,7 +52,7 @@ export default function VideoGameTable() {
 
     return (
 
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{width: '100%'}}>
 
             <Button variant="contained" color="primary" className="align-content-center"
                     onClick={() => setIsDialogOpen(true)}>
@@ -56,12 +60,12 @@ export default function VideoGameTable() {
             </Button>
 
             <FormDialog isDialogOpen={isDialogOpen} setVideoGames={setVideoGames}
-                        setIsDialogOpen={setIsDialogOpen} actualVideoGame={actualVideoGame} />
+                        setIsDialogOpen={setIsDialogOpen} actualVideoGame={actualVideoGame}/>
 
-            <Paper sx={{ width: '100%', mb: 2 }}>
+            <Paper sx={{width: '100%', mb: 2}}>
                 <TableContainer>
                     <Table
-                        sx={{ minWidth: 750 }}
+                        sx={{minWidth: 750}}
                         aria-labelledby="tableTitle"
                     >
                         <VideoGameTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort}/>
@@ -80,23 +84,31 @@ export default function VideoGameTable() {
                                             key={row.id}
                                         >
 
-                                            <TableCell onClick={() => getActualVideoGameById(row.id)}>{row.name}</TableCell>
-                                            <TableCell onClick={() => getActualVideoGameById(row.id)} align="right">{row.developer}</TableCell>
-                                            <TableCell onClick={() => getActualVideoGameById(row.id)} align="right">{row.gameModes}</TableCell>
-                                            <TableCell onClick={() => getActualVideoGameById(row.id)} align="right">{row.genre}</TableCell>
-                                            <TableCell onClick={() => getActualVideoGameById(row.id)} align="right">{row.rating}</TableCell>
-                                            <TableCell onClick={() => getActualVideoGameById(row.id)} align="right">{row.sellPrice}</TableCell>
-                                            <TableCell onClick={() => getActualVideoGameById(row.id)} align="right">{row.stock}</TableCell>
+                                            <TableCell
+                                                onClick={() => getActualVideoGameById(row.id)}>{row.name}</TableCell>
+                                            <TableCell onClick={() => getActualVideoGameById(row.id)}
+                                                       align="right">{row.developer}</TableCell>
+                                            <TableCell onClick={() => getActualVideoGameById(row.id)}
+                                                       align="right">{row.gameModes}</TableCell>
+                                            <TableCell onClick={() => getActualVideoGameById(row.id)}
+                                                       align="right">{row.genre}</TableCell>
+                                            <TableCell onClick={() => getActualVideoGameById(row.id)}
+                                                       align="right">{row.rating}</TableCell>
+                                            <TableCell onClick={() => getActualVideoGameById(row.id)}
+                                                       align="right">{row.sellPrice}</TableCell>
+                                            <TableCell onClick={() => getActualVideoGameById(row.id)}
+                                                       align="right">{row.stock}</TableCell>
 
                                             <TableCell><Button variant="contained" color="secondary"
-                                                               onClick={() => handleOpenDeleteDialog(row.id)}>Delete</Button> </TableCell>
+                                                               onClick={() => handleOpenDeleteDialog(row.id)}>Delete</Button>
+                                            </TableCell>
 
                                         </TableRow>
                                     );
                                 })}
                             {emptyRows > 0 && (
                                 <TableRow>
-                                    <TableCell colSpan={6} />
+                                    <TableCell colSpan={6}/>
                                 </TableRow>
                             )}
                         </TableBody>
