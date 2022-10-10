@@ -47,7 +47,8 @@ const useTableLogic = () => {
     };
 
 
-    const getComparator = (order: string, orderBy: string) => {
+    //Returns a function
+    const getComparator = (order: string, orderBy: string): (a: VideoGame, b: VideoGame) => number => {
 
         return order === 'desc'
             ? (a:VideoGame, b: VideoGame) => descendingComparator(a, b, orderBy)

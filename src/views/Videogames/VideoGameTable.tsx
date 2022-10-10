@@ -68,7 +68,7 @@ export default function VideoGameTable() {
                         sx={{minWidth: 750}}
                         aria-labelledby="tableTitle"
                     >
-                        <VideoGameTableHead order={order} orderBy={orderBy} onRequestSort={handleRequestSort}/>
+                        <VideoGameTableHead order={order} orderBy={orderBy} handleRequestSort={handleRequestSort}/>
 
                         <TableBody>
 

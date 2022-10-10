@@ -55,14 +55,14 @@ const headCells = [
 interface VideoGameTableHeadProps {
     order: any;
     orderBy: any;
-    onRequestSort: (event: any, property:string) => void;
+    handleRequestSort: (event: any, property:string) => void;
 }
 
-export default function VideoGameTableHead({ order, orderBy, onRequestSort}: VideoGameTableHeadProps) {
+export default function VideoGameTableHead({ order, orderBy, handleRequestSort}: VideoGameTableHeadProps) {
 
     const createSortHandler = (event: any, property: string) => {
 
-        onRequestSort(event, property);
+        handleRequestSort(event, property);
     };
 
 
