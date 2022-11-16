@@ -11,10 +11,7 @@ import {deleteVideoGameById} from "../../services/VideoGameService";
 
 export default function VideoGameTable() {
 
-    const {
-        videoGames, setVideoGames, isDialogOpen, setIsDialogOpen,
-        actualVideoGame, getActualVideoGameById
-    } = useCrudLogic();
+    const {videoGames, setVideoGames, isDialogOpen, setIsDialogOpen, actualVideoGame, getActualVideoGameById} = useCrudLogic();
 
     const {page, rowsPerPage, handleChangeRowsPerPage, handleChangePage, getComparator} = useTableLogic();
 

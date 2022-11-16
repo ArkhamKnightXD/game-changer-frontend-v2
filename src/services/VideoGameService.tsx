@@ -19,7 +19,7 @@ interface VideoGame {
 //para manejar los errores con los promise utilizamos try/catch, si deseamos hacer eso
 export const getAllVideoGames = (setVideoGames: (data: VideoGame[]) => void) => {
 
-    axios.get(`${URL}/api/v1/video-games`).then(response => {
+    axios.get(`${URL}/api/v1/games/`).then(response => {
 
         setVideoGames(response.data);
     });
@@ -28,7 +28,7 @@ export const getAllVideoGames = (setVideoGames: (data: VideoGame[]) => void) => 
 
 export const getAllVideoGamesWithPagination = (setVideoGames: (data: VideoGame[]) => void, paginationData: any) => {
 
-    axios.get(`${URL}/api/v1/video-games/pagination/${paginationData.pageSize}/${paginationData.sortIdentifier}/${paginationData.isAscending}`)
+    axios.get(`${URL}/api/v1/games/pagination/${paginationData.pageSize}/${paginationData.sortIdentifier}/${paginationData.isAscending}`)
         .then(response => {
 
         setVideoGames(response.data);
@@ -38,7 +38,7 @@ export const getAllVideoGamesWithPagination = (setVideoGames: (data: VideoGame[]
 
 export const getVideoGameById = (videoGameId: number, setActualVideoGame: (videoGame: VideoGame) => void) => {
 
-    axios.get(`${URL}/api/v1/video-games/${videoGameId}`).then(response => {
+    axios.get(`${URL}/api/v1/games/${videoGameId}`).then(response => {
 
         setActualVideoGame(response.data);
     });
@@ -47,7 +47,7 @@ export const getVideoGameById = (videoGameId: number, setActualVideoGame: (video
 
 export const saveVideoGame = (videoGame: VideoGame, setVideoGames: (data: VideoGame[]) => void) => {
 
-    axios.post(`${URL}/api/v1/video-games`, videoGame).then(response => {
+    axios.post(`${URL}/api/v1/games/`, videoGame).then(response => {
 
         setVideoGames(response.data);
     });
@@ -56,7 +56,7 @@ export const saveVideoGame = (videoGame: VideoGame, setVideoGames: (data: VideoG
 
 export const updateVideoGame = (videoGameToUpdate: VideoGame, setVideoGames: (data: VideoGame[]) => void) => {
 
-    axios.put(`${URL}/api/v1/video-games`, videoGameToUpdate).then(response => {
+    axios.put(`${URL}/api/v1/games/`, videoGameToUpdate).then(response => {
 
         setVideoGames(response.data);
     });
@@ -65,7 +65,7 @@ export const updateVideoGame = (videoGameToUpdate: VideoGame, setVideoGames: (da
 
 export const deleteVideoGameById = (videoGameId: number, setVideoGames: (data: VideoGame[]) => void) => {
 
-    axios.delete(`${URL}/api/v1/video-games/${videoGameId}`).then(response => {
+    axios.delete(`${URL}/api/v1/games/${videoGameId}`).then(response => {
 
         setVideoGames(response.data);
     });
